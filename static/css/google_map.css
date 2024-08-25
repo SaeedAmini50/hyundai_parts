@@ -1,0 +1,54 @@
+
+.card{
+	margin-left:45%;
+	margin-top:10%;
+background:white;
+  border-radius:10%;
+	height:400px;
+width:400px;
+overflow:hidden;
+box-shadow:5px 5px 15px rgb(167,203,67);
+transition:0.5s ease;
+
+}
+
+.card-title{
+  text-align:center;
+  text-transform:capitalize;
+font-family:"Calibri";
+  width:99%;
+  height:5%;
+  
+}
+.card-text{
+overflow:auto;
+
+  width:99%;
+  height:15%;
+  overflow:hidden;
+}
+
+
+.card-text p{
+
+padding-left:5%;
+padding-right:5%;
+font-family:"Calibri";
+
+}
+
+.btn_map button{
+background-Color:red;
+
+  width:10%;
+  
+   text-align:center;
+		height:10%;
+		position-right:5%;
+}
+
+
+.card:hover{
+	transform:scale(1.2);
+	box-shadow:5px 5px 15px  rgb(96,164,201);
+}

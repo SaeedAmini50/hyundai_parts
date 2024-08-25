@@ -1,0 +1,171 @@
+<DOCTYPE!>
+<html>
+<head>
+<style type="text/css" >
+table{border:2px solid black}
+	
+</style>
+<script type="text/JavaScript">
+ var stop=0;
+function loginfunction(){
+
+var ddd=new RegExp("[^ 0-9]{8}");
+
+
+var user=document.getElementById("user").value;
+if(ddd.test(user)==false ){document.getElementById("user").style.border="3px solid red";
+document.getElementById("usererror").innerHTML="your user is not corect";
+
+}
+else if(ddd.test(user)==true ){document.getElementById("user").style.border="3px solid blue";
+document.getElementById("usererror").innerHTML="";
+document.getElementById("usererror2").innerHTML="thanks";
+}
+
+
+
+var low =new RegExp("[A-z]{8}");
+var minimum =new RegExp("[0-9]{8}");
+var normal =new RegExp("[A-z,0-9]{8}");
+var indextextfield=new RegExp("[@#!$&\*%|/+=_-]{8}");
+var strong =new RegExp("[A-z,0-9,@#!$&\*%|/+=_-]{8}");
+
+
+var password=document.getElementById("password").value;
+
+
+
+if (low.test(password)==true){document.getElementById("password").style.border="3px solid blue";
+speass();
+document.getElementById("lowpass").innerHTML="your password is low";
+
+}
+else if(minimum.test(password)==true ){document.getElementById("password").style.border="3px solid blue";
+speass();
+document.getElementById("minimumpass").innerHTML="your password is minimum";
+
+}
+else if(normal.test(password)==true){document.getElementById("password").style.border="3px solid blue";
+speass();
+document.getElementById("normalpass").innerHTML="your password is normal";
+
+}
+ else if(indextextfield.test(password)==true){document.getElementById("password").style.border="3px solid red";
+ speass();
+ document.getElementById("normalpass").innerHTML="your password is normal";
+
+}
+else if(strong.test(password)==true ){document.getElementById("password").style.border="3px solid blue";
+speass();
+document.getElementById("strongpass").innerHTML="your password is strong";
+
+}
+else{document.getElementById("password").style.border="3px solid red";
+speass();
+document.getElementById("passworderror").innerHTML="your password is not corect";
+}
+
+var emaill =new RegExp("[A-z,0-9][@](gmail|email)[.](com)");
+var email=document.getElementById("email").value;
+if(emaill.test(email)==false){document.getElementById("email").style.border="3px solid red";
+document.getElementById("emailerror").innerHTML="your email is not corect";
+return false;
+}
+else if(emaill.test(email)==true){document.getElementById("email").style.border="3px solid  blue";
+document.getElementById("emailerror").innerHTML="";
+document.getElementById("emailerror2").innerHTML="your email corect";
+}
+
+}
+function speass(){
+document.getElementById("lowpass").innerHTML="";
+document.getElementById("passworderror").innerHTML="";
+document.getElementById("strongpass").innerHTML="";
+ document.getElementById("normalpass").innerHTML="";
+ document.getElementById("minimumpass").innerHTML="";
+}
+ 
+
+function backk(){
+
+console.log('calling')
+stop = setInterval(()=>{
+let ccc=Math.ceil(Math.random()*255);
+let cc=Math.ceil(Math.random()*255);
+let c=Math.ceil(Math.random()*255);
+document.getElementById("back").style.backgroundColor=`rgb(${c},${cc},${ccc})`;
+},1000);
+}
+function bac(){
+clearInterval(stop);
+}
+function loginn(){
+loginfunction();
+backk();
+}
+setInterval(loginfunction,100);
+</script>
+</head>
+
+<body  style=" background-color:gray">
+<h1 align="center" style="color:black">Login Page
+</h1>
+
+
+		<table id="back" align="center" >
+		
+<form method="post" onsubmit="(e)=> e.preventDefault()">
+			<tr>
+            <td><input autofocus title="pleace type more 4 carecter" type="text" maxlength="16" oninput="notAllowed(this)" name="login"   placeholder="user name" id="user"><span id="usererror"  style="color:red"></span><span id="usererror2"  style="color:blue"></span></td>
+			<script>
+				function notAllowed(inp){
+				
+					if(RegExp(/([0-9])/).test(inp.value)){
+						inp.value = inp.value.substring(0,inp.value.length -1);
+					}
+					
+					console.log(inp.value)
+				}
+			</script>
+		</tr>
+			<tr>
+            <td><input title="pleace type more 4 carecter" type="text" maxlength="16" placeholder="password" name="password"  id="password"></span> <span id="passworderror"  style="color:red"></span><span id="lowpass"  style="color:black"></span> <span id="minimumpass"  style="color:black"></span><span id="strongpass"  style="color:blue"></span><span id="normalpass"  style="color:green"></span></td>
+		</tr>
+		<tr>
+		<td>
+		<input title="pleace type more 4 carecter" type="text" maxlength="25" placeholder="email" id="email" ><span id="emailerror"  style="color:red"></span><span id="emailerror2"  style="color:blue"></span>
+		
+		</td>
+		
+		</tr>
+			<tr align="center">
+			
+            <td><input type="checkbox" id="ch1" onclick="check(this.value)" value="male" name="gender">male
+            <td><input type="checkbox" id="ch2" onclick="check(this.value)" value="female" name="gender">female
+            <script>
+				function check(val){
+				let ch1 = document.getElementById("ch1")
+				let ch2 = document.getElementById("ch2")
+					if(val=='male'){
+						ch2.checked = false
+					}else{
+						ch1.checked = false
+					}
+				}
+			</script>
+        </td>
+		</tr>
+		</form>
+			<tr>
+           
+			
+ <td ><button onclick="return backk()" value="button">start</button></td>
+ <td ><button  onclick="bac()"  value="button" >stop</button></td>
+		</tr>
+		
+		
+		
+		</table>
+
+</body>
+</html>
