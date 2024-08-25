@@ -1,7 +1,7 @@
 from django.urls import path
-from aminicar.views import home
+from aminicar.views import index
 
 urlpatterns = [
-    path('', home , name='home')
+    path('index', index , name='index')
 ]
 
