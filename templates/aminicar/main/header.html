@@ -1,3 +1,5 @@
+{% load static %}
+
 <header>
     <!-- TOP HEADER -->
     <div id="top-header">
@@ -9,7 +11,7 @@
     </ul>
     <ul class="header-links pull-right">
     
-    <li><a href="signin.html"><i class="fa fa-user-o"></i>اکانت من</a></li>
+    <li><a href="signin.html"><i class="fa fa-user-o"></i>اکانت من {{ name }}</a></li>
     
     <li><a href="signin.html"><i></i>	</a></li>
     <li><a href="signup.html"><i class="fa fa-user-o"></i>درست کردن اکانت</a></li>
@@ -28,7 +30,7 @@
     <div class="col-md-3">
     <div class="header-logo">
     <a href="#" class="logo">
-    <img src="./img/logo.jpg" alt="">
+    <img src="{% static '' %}./img/logo.jpg" alt="">
     </a>
     </div>
     </div>

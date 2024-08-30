@@ -62,7 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'smartcar.wsgi.application'
-
+AUTH_USER_MODEL ='aminicar.Account'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
