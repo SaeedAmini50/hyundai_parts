@@ -28,15 +28,15 @@
                             </a>
                             <h3>Sign In</h3>
                         </div>
-                        <form  methed="post">
+                        <form  method="post">
                             {% csrf_token %}
                         <div class="form-floating mb-3">
                           
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input name="email" type="email" class="form-control"  placeholder="name@example.com" required="required">
                             <label for="floatingInput">ایمیل آدرس</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input name="password"  type="password" class="form-control"  placeholder="Password" required="required">
                             <label for="floatingPassword"> رمز یا پسورد</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
