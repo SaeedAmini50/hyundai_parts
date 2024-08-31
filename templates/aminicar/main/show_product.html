@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	{%  block head_tag %} {% include 'aminicar/main/head_tag.html' %} {% endblock %}
-	
-</head>
-<body>
-<!-- HEADER -->
- 
-{%  block header %} {% include 'aminicar/main/header.html' %} {% endblock %}
-
-<!-- /TOP HEADER -->
-
-<!-- NAVIGATION -->
-<nav id="navigation">
-<!-- container -->
-<div class="container">
-<!-- responsive-nav -->
-<div id="responsive-nav">
-  <!-- NAV -->
-     <ul class="main-nav nav navbar-nav">
-	       <li class="active"><a href="index.html">صفحه اصلی</a></li>
-      <li><a href="#"></a></li>
-      <li class="active"><a href="#">تلویزیون</a></li>
-      <li><a href="#"></a></li>
-      <li><a href="storemachin.html">لباسشویی</a></li>
-
-     </ul>
-     <!-- /NAV -->
-</div>
-<!-- /responsive-nav -->
-</div>
-<!-- /container -->
-</nav>
-<!-- /NAVIGATION -->
-
+{% extends 'aminicar/main/base.html' %}
+{% load static%}
+{%  block content %} 
 <!-- SECTION -->
 <div class="section">
 <!-- container -->
@@ -44,19 +11,19 @@
 <div class="col-md-5 col-md-push-2">
 <div id="product-main-img">
 <div class="product-preview">
-<img src="./img/TV2.jpg" alt="">
+<img src="{% static '' %}./img/TV2.jpg" alt="">
 </div>
 
 <div class="product-preview">
-<img src="./img/TV3.jpg" alt="">
+<img src="{% static '' %}./img/TV3.jpg" alt="">
 </div>
 
 <div class="product-preview">
-<img src="./img/TV4.png" alt="">
+<img src="{% static '' %}./img/TV4.png" alt="">
 </div>
 
 <div class="product-preview">
-<img src="./img/TVV.jpg" alt="">
+<img src="{% static '' %}./img/TVV.jpg" alt="">
 </div>
 </div>
 </div>
@@ -66,19 +33,19 @@
 <div class="col-md-2  col-md-pull-5">
 <div id="product-imgs">
 <div class="product-preview">
-<img src="./img/TV2.jpg" alt="">
+<img src="{% static '' %}./img/TV2.jpg" alt="">
 </div>
 
 <div class="product-preview">
-<img src="./img/TV3.jpg" alt="">
+<img src="{% static '' %}./img/TV3.jpg" alt="">
 </div>
 
 <div class="product-preview">
-<img src="./img/TV4.png" alt="">
+<img src="{% static '' %}./img/TV4.png" alt="">
 </div>
 
 <div class="product-preview">
-<img src="./img/TVV.sjpg" alt="">
+<img src="{% static '' %}./img/TVV.jpg" alt="">
 </div>
 </div>
 </div>
@@ -131,44 +98,7 @@
 <!-- /container -->
 </div>
 <!-- /section -->
-  <!-- NEWSLETTER -->
-  <div id="newsletter" class="section">
-   <!-- container -->
-   <div class="container">
-    <!-- row -->
-    <div class="row">
-     <div class="col-md-12">
-      <div class="newsletter">
-       <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-       <form>
-        <input class="input" type="email" placeholder="Enter Your Email">
-        <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-       </form>
-       <ul class="newsletter-follow">
-        <li>
-         <a href="#"><i class="fa fa-facebook"></i></a>
-        </li>
-        <li>
-         <a href="#"><i class="fa fa-telegram"></i></a>
-        </li>
-        <li>
-         <a href="#"><i class="fa fa-whatsapp"></i></a>
-        </li>
-       
-       </ul>
-      </div>
-     </div>
-    </div>
-    <!-- /row -->
-   </div>
-   <!-- /container -->
-  </div>
-  <!-- /NEWSLETTER -->
-  
   
 <!-- FOOTER -->
+{% endblock %}
 
-{%  block footer %} {% include 'aminicar/main/footer.html' %} {% endblock %}
-
-</body>
-</html>

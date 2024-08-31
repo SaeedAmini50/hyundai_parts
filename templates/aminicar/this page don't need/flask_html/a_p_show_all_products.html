@@ -1,0 +1,47 @@
+{% extends "base_user.html" %}
+
+{% block content %}
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">همه سفارشات این ماه</h6>
+            <a href="">نمایش همه</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">ویرایش <i class="fas fa-pen-fancy"></i></th>
+                        <th scope="col">اسم محصول</th>
+                        <th scope="col">دسته بندی</th>
+                        <th scope="col">قیمت محصول</th>
+                        <th scope="col">سایز محصول</th>
+                        <th scope="col">صفت محصول</th>
+                        <th scope="col">مارک محصول</th>
+                        <th scope="col">عکس محصول</th>
+                        <th scope="col">سود محصول</th>
+                        <th scope="col">فعالیت</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">افزودن <i class="fas fa-pen-fancy"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in product %}
+                    <tr>
+                        <th><a href="">ویرایش <i class="fas fa-pen-fancy"></i></a></th>
+                        <td>{{ product['product_name'] }}</td>
+                        <td>{{ product['category_ID'] }}</td>
+                        <td>{{ product['product_port'] }}</td>
+                        <td>{{ product['product_explan'] }}</td>
+                        <td>{{ product['product_mark'] }}</td>
+                        <td>{{ product['product_active'] }}</td>
+                        <td>{{ product['product_ID'] }}</td>
+                        <th><a href="">افزودن <i class="fas fa-pen-fancy"></i></a></th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

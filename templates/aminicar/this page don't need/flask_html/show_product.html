@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    {% for image in product.images %}
+                    <div class="product-preview">
+                        <img src="{{ url_for('static', filename='img/' + image) }}" alt="">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-2 col-md-pull-5">
+                <div id="product-imgs">
+                    {% for image in product.images %}
+                    <div class="product-preview">
+                        <img src="{{ url_for('static', filename='img/' + image) }}" alt="">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="product-details">
+                    <h1 class="product-name">{{ product.product_name }}</h1>
+                    <div>
+                        <p>{{ product.product_explan }}</p>
+                    </div>
+                </div>
+                	<!-- Left contact page -->
+		
+				<hr class="hrRed">
+				<ul class="social-media-list">
+					<li><a href="#" target="_blank" class="contact-icon"> <i
+							class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+					<li><a href="#" target="_blank" class="contact-icon"> <i
+							class="fa fa-telegram" aria-hidden="true"></i></a></li>
+					<li><a href="#" target="_blank" class="contact-icon"> <i
+							class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#" target="_blank" class="contact-icon"> <i
+							class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				</ul>
+				<hr class="hrRed">
+			</div>
+           
+        </div>
+    </div>
+</div>
+
+
+		
+{% endblock %}
+

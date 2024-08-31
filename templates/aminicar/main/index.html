@@ -1,36 +1,866 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    
-{%  block head_tag %} {% include 'aminicar/main/head_tag.html' %} {% endblock %}
 
-    </head>
-<body>
-<!-- HEADER -->
-<h1>hello {{ name }}</h1>
-{%  block header %} {% include 'aminicar/main/header.html' %} {% endblock %}
+{% extends 'aminicar/main/base.html' %}
+{% load static%}
+{%  block content %} 
+  <!-- SECTION -->
+  <div class="section">
+  <!-- container -->
+  <div class="container">
+  <!-- row -->
+  <div class="row">
+  <div class="col-md-12">
+  <div class="section-title">
+  <div class="section-nav">
+  <ul class="section-tab-nav tab-nav">
+  <h1><li class="active"><a  name="NEW"data-toggle="tab" href="#tab2">محصولات جدید</a></li></h1>
+  
+  </ul>
+  </div>
+  </div>
+  </div>
+  <!-- shop -->
+  
+  <div class="col-md-4 col-xs-6">
+  <div class="shop">
+  <div class="shop-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="shop-body">
+  <h3>washing machine<br>foll automatic </h3>
+  <a href="storemachin.html " class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  </div>
+  </div>
+  </div>
+  <!-- /shop -->
+  
+  <!-- shop -->
+  <div class="col-md-4 col-xs-6">
+  <div class="shop">
+  <div class="shop-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="" >
+  </div>
+  <div class="shop-body">
+  <h3>TV <br>smart</h3>
+  <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  </div>
+  </div>
+  </div>
+  <!-- /shop -->
+  
+  <!-- shop -->
+  <div class="col-md-4 col-xs-6">
+  <div class="shop">
+  <div class="shop-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="shop-body">
+  <h3>washing machine<br>foll automatic</h3>
+  <a href="storemachin.html " class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  </div>
+  </div>
+  </div>
+  <!-- /shop -->
+  </div>
+  <!-- /row -->
+  </div>
+  <!-- /container -->
+  </div>
+  <!-- /SECTION -->
 
-<!-- /HEADER -->
+<!-- NEWSLETTER -->
+<div id="newsletter" class="section"></div>
+<!-- NEWSLETTER -->
+  
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
 
-{%  block test %} {% include 'aminicar/main/test.html' %} {% endblock %}
+				<!-- Company details -->
+				<div class="col-md-12">
+					<div class="Company-details">
+
+
+						<p class="farsi">
+						<h1 class="Company-name">Smart Car</h1>
+						<h4>
+							با خوش آمدگویی به Smart Car <br> بهترین منبع برای لوازم یدکی
+							ماشین‌های هیوندایی در تهران! <br> Smart Car یک شرکت است که
+							با هدف فراهم کردن بهترین لوازم یدکی ماشین‌های هیوندایی در تهران
+							تأسیس شده است. ما به ارمغان می‌آوریم کیفیتی بی‌نظیر و خدماتی
+							استثنایی برای مشتریان عزیزمان. <br> با ما، مطمئن باشید که هر
+							قطعه یدکی که از Smart Car تهیه می‌کنید، از بهترین کیفیت و
+							استانداردهای بین‌المللی برخوردار است. ما با انتخاب دقیق و اخذ
+							محصولات از منابع معتبر خارجی، اطمینان حاصل می‌کنیم که ماشین شما
+							همواره در بهترین حالت ممکن عمل می‌کند. به عنوان یک شرکت تازه
+							‌تأسیس، Smart Car از اینکه به جمع مشتریان ما اضافه شوید، بسیار
+							خوشحال خواهد شد. بازدید از وب‌سایت ما و تجربه کردن خدمات ما، به
+							شما نشان خواهد داد که چرا Smart Car انتخاب مناسبی برای تأمین
+							لوازم یدکی ماشین‌های هیوندایی در تهران است. <br> با تشکر از
+							اعتماد شما، ما در Smart Car متعهدیم تا همیشه بهترین خدمات و
+							محصولات را به شما ارائه دهیم.
+						</h4>
+						</p>
+
+
+
+					</div>
+				</div>
+
+
+
+			</div>
+			<!-- row -->
+		</div>
+		<!-- container -->
+	</div>
+	<!-- /SECTION -->
 
 
 <!-- NEWSLETTER -->
-<!-- /google map -->
+<div id="newsletter" class="section"></div>
+<!-- NEWSLETTER -->
 
 
+  
+  <!-- SECTION -->
+  <div class="section">
+  <!-- container -->
+  <div class="container">
+  <!-- row -->
+  <div class="row">
+  
+  <!-- section title -->
+  <div class="col-md-12">
+  <div class="section-title">
+  
+  <div class="section-nav">
+  <ul class="section-tab-nav tab-nav">
+  <h1><li class="active"><a name="TV" data-toggle="tab" href="storeTV.html">تلویزیون</a></li></h1>
+  
+  </ul>
+  </div>
+  </div>
+  </div>
+  <!-- /section title -->
+  
+  <!-- Products tab & slick -->
+  <div class="col-md-12">
+  <div class="row">
+  <div class="products-tabs">
+  <!-- tab -->
+  <div id="tab1" class="tab-pane active">
+  <div class="products-slick" data-nav="#slick-nav-1">
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  <div class="product-label">
+  <span class="sale">-30%</span>
+  <span class="new">NEW</span>
+  </div>
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">تلویزیون</p>
+  <h3 class="product-name"><a href="#">pilips 65 inch</a></h3>
+  <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  <div class="product-label">
+  <span class="new">NEW</span>
+  </div>
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">تلویزیون</p>
+  <h3 class="product-name"><a href="#">pilips 65 inch</a></h3>
+  <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star-o"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  <div class="product-label">
+  <span class="sale">-30%</span>
+  </div>
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">تلویزیون</p>
+  <h3 class="product-name"><a href="#">pilips 65 inch</a></h3>
+  <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">تلویزیون</p>
+  <h3 class="product-name"><a href="#">pilips 65 inch</a></h3>
+  <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">تلویزیون</p>
+  <h3 class="product-name"><a href="#">pilips 65 inch</a></h3>
+  <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  </div>
+  <div id="slick-nav-1" class="products-slick-nav"></div>
+  </div>
+  <!-- /tab -->
+  </div>
+  </div>
+  </div>
+  <!-- Products tab & slick -->
+  </div>
+  <!-- /row -->
+  </div>
+  <!-- /container -->
+  </div>
+  <!-- /SECTION -->
+
+  <!-- NEWSLETTER -->
+<div id="newsletter" class="section"></div>
+<!-- NEWSLETTER -->
+
+  
+  <!-- SECTION -->
+  <div class="section">
+  <!-- container -->
+  <div class="container">
+  <!-- row -->
+  <div class="row">
+  
+  <!-- section title -->
+  <div class="col-md-12">
+  <div class="section-title">
+  <div class="section-nav">
+  <ul class="section-tab-nav tab-nav">
+  <h1><li class="active"><a  name="MACHINE" data-toggle="tab" href="#tab2">لباسشویی</a></li></h1>
+  
+  </ul>
+  </div>
+  </div>
+  </div>
+  <!-- /section title -->
+  
+  <!-- Products tab & slick -->
+  <div class="col-md-12">
+  <div class="row">
+  <div class="products-tabs">
+  <!-- tab -->
+  <div id="tab2" class="tab-pane fade in active">
+  <div class="products-slick" data-nav="#slick-nav-2">
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  <div class="product-label">
+  <span class="sale">-30%</span>
+  <span class="new">NEW</span>
+  </div>
+  </div>
+  <div class="product-body">
+    <p class="product-sumsong">لباسشویی</p>
+            <h3 class="product-name"><a href="#">sumsong <span style="color:red">12</span> kg<span style="color:red">Full Automatic</span></a></h3>
+            <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  <div class="product-label">
+  <span class="new">NEW</span>
+  </div>
+  </div>
+  <div class="product-body">  <p class="product-sumsong">لباسشویی</p>
+            <h3 class="product-name"><a href="#">sumsong <span style="color:red">12</span> kg<span style="color:red">Full Automatic</span></a></h3>
+            <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star-o"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  <div class="product-label">
+  <span class="sale">-30%</span>
+  </div>
+  </div>
+  <div class="product-body">  <p class="product-sumsong">لباسشویی</p>
+            <h3 class="product-name"><a href="#">sumsong <span style="color:red">12</span> kg<span style="color:red">Full Automatic</span></a></h3>
+            <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">  <p class="product-sumsong">لباسشویی</p>
+            <h3 class="product-name"><a href="#">sumsong <span style="color:red">12</span> kg<span style="color:red">Full Automatic</span></a></h3>
+            <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  
+  <!-- product -->
+  <div class="product">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">  <p class="product-sumsong">لباسشویی</p>
+            <h3 class="product-name"><a href="#">sumsong <span style="color:red">12</span> kg<span style="color:red">Full Automatic</span></a></h3>
+            <h4 class="product-price">AF 35,000</h4>
+  <div class="product-rating">
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  </div>
+  <div class="product-btns">
+  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  </div>
+  </div>
+  <div class="add-to-cart">
+  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+  </div>
+  </div>
+  <!-- /product -->
+  </div>
+  <div id="slick-nav-2" class="products-slick-nav"></div>
+  </div>
+  <!-- /tab -->
+  </div>
+  </div>
+  </div>
+  <!-- /Products tab & slick -->
+  </div>
+  <!-- /row -->
+  </div>
+  <!-- /container -->
+  </div>
+  <!-- /SECTION -->
+  
+<!-- NEWSLETTER -->
+<div id="newsletter" class="section"></div>
+<!-- NEWSLETTER -->
+
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+				<!-- Company details -->
+				<div class="col-md-12">
+					<div class="Company-details">
+						<h1 class="title">چرا ما را انتخاب کنید</h1>
+						<p>
+						<h4>
+							با Smart Car، انتخابی هوشمندانه! <br> آیا به دنبال یک تجربه
+							خرید بی‌نظیر برای لوازم یدکی ماشین خود هستید؟ <br> با Smart
+							Car، شما از تمامی خدمات و محصولاتی که به دنبال آن‌هستید، بهره‌مند
+							خواهید شد. اینجا چند دلیل برای انتخاب ما: <br> ۶ ماه
+							گارانتی: ما به کیفیت محصولاتمان اعتماد داریم، بنابراین با ارائه ۶
+							ماه گارانتی، اطمینان حاصل می‌کنیم که مشتریان ما از خرید خود لذت
+							می‌برند و در صورت هر گونه مشکل، اعتماد خود را به ما بسپارند. <br>ارسال
+							رایگان: همراه با Smart Car، ارسال رایگان به سراسر کشور شامل تمامی
+							خریدهای شما است. ما به راحتی و رضایت شما اهمیت می‌دهیم و برای
+							همین ارسال سریع و رایگان را فراهم کرده‌ایم.<br> پشتیبانی
+							قوی: تیم ما از پشتیبانی مشتریان مجرب و متعهد تشکیل شده است که
+							همیشه در دسترس هستند تا به شما در هر مرحله از فرآیند خرید کمک
+							کنند و هر گونه سوال یا مشکلی را رفع کنند.<br> بازگشت محصول:
+							اگر به هر دلیلی از خرید خود راضی نبودید، شما می‌توانید محصول را
+							به ما بازگردانید و پول خود را دریافت کنید. رضایت شما از خرید ما
+							در اولویت اول قرار دارد.<br> با Smart Car، بهترین تجربه خرید
+							را تجربه کنید. ما اینجا هستیم تا شما را در هر مرحله از فرآیند
+							خرید همراهی کنیم و اطمینان حاصل کنیم که خودروی شما به بهترین شکل
+							ممکن عمل می‌کند.<br>
+						</h4>
+						</p>
+
+
+
+
+
+
+					</div>
+				</div>
+
+
+
+			</div>
+			<!-- row -->
+		</div>
+		<!-- container -->
+	</div>
+	<!-- /SECTION -->
+
+<!-- NEWSLETTER -->
+<div id="newsletter" class="section"></div>
+<!-- NEWSLETTER -->
+
+
+  <!-- SECTION -->
+  <div class="section">
+  <!-- container -->
+  <div class="container">
+  <!-- row -->
+  <div class="row">
+  <div class="col-md-4 col-xs-6">
+  <div class="section-title">
+  <h4 class="title">تمام محصولات</h4>
+  <div class="section-nav">
+  <div id="slick-nav-3" class="products-slick-nav"></div>
+  </div>
+  </div>
+  
+  <div class="products-widget-slick" data-nav="#slick-nav-3">
+  <div>
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- product widget -->
+  </div>
+  
+  <div>
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  
+  <!-- product widget -->
+  </div>
+  </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+  <div class="section-title">
+  <h4 class="title">تمام محصولات</h4>
+  <div class="section-nav">
+  <div id="slick-nav-4" class="products-slick-nav"></div>
+  </div>
+  </div>
+  
+  <div class="products-widget-slick" data-nav="#slick-nav-4">
+  <div>
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- product widget -->
+  </div>
+  
+  <div>
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+ 
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- product widget -->
+  </div>
+  </div>
+  </div>
+  
+  <div class="clearfix visible-sm visible-xs"></div>
+  
+  <div class="col-md-4 col-xs-6">
+  <div class="section-title">
+  <h4 class="title">تمام محصولات</h4>
+  <div class="section-nav">
+  <div id="slick-nav-5" class="products-slick-nav"></div>
+  </div>
+  </div>
+  
+  <div class="products-widget-slick" data-nav="#slick-nav-5">
+  <div>
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- product widget -->
+  </div>
+  
+  <div>
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/TVV.jpg" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">philips</p>
+  <h3 class="product-name"><a href="storeTV.html">TV</a></h3>
+  
+  </div>
+  </div>
+  <!-- /product widget -->
+  
+  <!-- product widget -->
+  <div class="product-widget">
+  <div class="product-img">
+  <img src="{% static '' %}./img/machin6.webp" alt="">
+  </div>
+  <div class="product-body">
+  <p class="product-sumsong">sumsong</p>
+  <h3 class="product-name"><a href="storemachin.html">WASHIMG MACHINE</a></h3>
+  
+  </div>
+  </div>
+  <!-- product widget -->
+  </div>
+  </div>
+  </div>
+  
+  </div>
+  <!-- /row -->
+  </div>
+  <!-- /container -->
+  </div>
+  <!-- /SECTION -->
+
+  
+
+  
 {%  block map_shop %} {% include 'aminicar/main/map_shop.html' %} {% endblock %}
 
-<!-- /NEWSLETTER -->
-
-<!--/map -->
-
 <!-- FOOTER -->
-{%  block footer %} {% include 'aminicar/main/footer.html' %} {% endblock %}
+{% endblock %}
 
-<!-- /FOOTER -->
-
-
-</body>
-</html>

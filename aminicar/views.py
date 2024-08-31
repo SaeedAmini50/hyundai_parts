@@ -13,16 +13,18 @@ def index (requset):
 def show_product (requset):
     return render(requset,'aminicar/main/show_product.html')
 
-
+ 
 def signup (requset):
     return render(requset,'aminicar/form/signup.html')
 
 
+ 
+def base(requset):
+    return render(requset, 'aminicar/main/base.html')
 
-def home(requset):
+def index(requset):
     return render(requset, 'aminicar/main/index.html')
-
-
+ 
 
 def login_view(request):
     context = {}
