@@ -75,12 +75,12 @@
             </li>
           </ul>
           <ul class="header-links pull-right">
-            {% if email is not none %}
+            {% if name is not none %}
             <li>
               <a href=""><i class="fa fa-user-o"></i>پروفایل شما</a>
             </li>
-            {{email }}
-            <li><a href=""> {{ email }} :ایمیل شما</a></li>
+            {{ name }}
+            <li><a href=""> {{ name }} :ایمیل شما</a></li>
             {% else %}
             <li><a href="">هیچ ایمیلی وارد نشده است</a></li>
             <li>

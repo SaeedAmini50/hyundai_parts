@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import AccountAuthenticationForm
+from .forms import AccountAuthenticationForm , RegistrationForm
 from django.contrib.auth import authenticate, login
 from aminicar.models import Account
 from django.conf import settings
@@ -9,6 +9,10 @@ from django.conf import settings
 
 def index (requset):
     return render(requset,'aminicar/main/index.html', {'name':'saeedamini'})
+
+
+def base (requset):
+    return render(requset,'aminicar/main/base.html', {'name':'saeedamini'})
 
 def show_product (requset):
     return render(requset,'aminicar/main/show_product.html')
@@ -26,7 +30,7 @@ def index(requset):
     return render(requset, 'aminicar/main/index.html')
  
 
-def login_view(request):
+def register_signin(request):
     context = {}
     user = request.user
     if user.is_authenticated:
@@ -53,3 +57,31 @@ def login_view(request):
 
     return render(request, 'aminicar/form/signin.html', context)
 
+
+
+def register_signup(request, *args, **kwargs):
+    user = request.user
+    if user.is_authenticated:
+        return HttpResponse("You are already authenticated as " + str(user.email))
+
+    context = {}
+    if request.POST:
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            email = form.cleaned_data.get('email').lower()
+            raw_password = form.cleaned_data.get('password1')
+            account = authenticate(email=email, password=raw_password)
+            login(request, account)
+            destination = kwargs.get("next")
+            if destination:
+                return redirect(destination)
+            return redirect("aminicar:index")
+        else:
+            context['registration_form'] = form
+            print(form.errors) 
+
+    else:
+        form = RegistrationForm()
+        context['registration_form'] = form
+    return render(request, 'aminicar/form/signup.html', context)
