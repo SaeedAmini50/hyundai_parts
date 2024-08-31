@@ -6,6 +6,11 @@ from aminicar.models import Account
 from django.conf import settings
  
 
+def indexAdmin (requset):
+    return render(requset,'aminicar/dashboard/indexAdmin.html')
+
+
+
 
 def index (requset):
     return render(requset,'aminicar/main/index.html', {'name':'saeedamini'})
@@ -23,9 +28,6 @@ def signup (requset):
 
 
  
-def base(requset):
-    return render(requset, 'aminicar/main/base.html')
-
 def index(requset):
     return render(requset, 'aminicar/main/index.html')
  

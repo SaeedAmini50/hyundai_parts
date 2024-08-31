@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,14 +75,14 @@
             </li>
           </ul>
           <ul class="header-links pull-right">
-            {% if name is not none %}
+            {% if user.is_authenticated %}
             <li>
               <a href=""><i class="fa fa-user-o"></i>پروفایل شما</a>
             </li>
-            {{ name }}
-            <li><a href=""> {{ name }} :ایمیل شما</a></li>
+            
+            <li class="fa fa-user-o"><a href=""> {{ request.user }} :ایمیل شما</a></li>
             {% else %}
-            <li><a href="">هیچ ایمیلی وارد نشده است</a></li>
+            <li class="fa fa-user-o"><a href="">هیچ ایمیلی وارد نشده است</a></li>
             <li>
               <a href=""><i class="fa fa-user-o"></i>وارد ایمیل خود شوید</a>
             </li>
@@ -366,5 +366,6 @@
     <script src="{% static '' %}js/nouislider.min.js"></script>
     <script src="{% static '' %}js/jquery.zoom.min.js"></script>
     <script src="{% static '' %}js/main.js"></script>
+    
   </body>
 </html>
