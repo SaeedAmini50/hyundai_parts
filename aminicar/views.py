@@ -40,11 +40,12 @@ def login_view(request):
             raw_password = form.cleaned_data.get('password')
             user = authenticate(email=email, password=raw_password)
 
-        else:
-            print(form.errors) 
+        
             if user:
                 login(request, user)
                 return redirect('aminicar:index')
+        else:
+            print(form.errors) 
     else:
         form = AccountAuthenticationForm()
     
