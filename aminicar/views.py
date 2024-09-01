@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import AccountAuthenticationForm , RegistrationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login ,logout
 from aminicar.models import Account
 from django.conf import settings
  
@@ -87,3 +87,11 @@ def register_signup(request, *args, **kwargs):
         form = RegistrationForm()
         context['registration_form'] = form
     return render(request, 'aminicar/form/signup.html', context)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('aminicar:index')
+
+
+
