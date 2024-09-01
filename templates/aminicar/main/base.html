@@ -10,7 +10,13 @@
 
     <title>SmartStor Template</title>
 
+
     <!-- Bootstrap -->
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="{% static '' %}css/popup.css"
+  />
     <link
       type="text/css"
       rel="stylesheet"
@@ -23,6 +29,7 @@
       rel="stylesheet"
       href="{% static '' %}css/slick.css"
     />
+
     <link
       type="text/css"
       rel="stylesheet"
@@ -76,6 +83,19 @@
           </ul>
           <ul class="header-links pull-right">
             {% if user.is_authenticated %}
+            
+    <div id="popup" class="popup">
+      <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <p>{{ request.user }}پیام خوش آمدید  به فروشگاه لوازم یدکی خودرو!</p>
+          <button id="okBtn" class="ok-btn">باشه</button>
+      </div>
+  </div>
+    
+
+   
+
+
             <li>
               <a href=""><i class="fa fa-user-o"></i>پروفایل شما</a>
             </li>
@@ -360,12 +380,15 @@
     </footer>
 
     <!-- jQuery Plugins -->
+    <script src="{% static '' %}js/popup.js"></script>
     <script src="{% static '' %}js/jquery.min.js"></script>
     <script src="{% static '' %}js/bootstrap.min.js"></script>
     <script src="{% static '' %}js/slick.min.js"></script>
     <script src="{% static '' %}js/nouislider.min.js"></script>
     <script src="{% static '' %}js/jquery.zoom.min.js"></script>
     <script src="{% static '' %}js/main.js"></script>
+    
+    
     
   </body>
 </html>
