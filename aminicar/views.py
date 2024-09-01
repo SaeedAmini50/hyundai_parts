@@ -17,7 +17,7 @@ def index (requset):
 
 
 def base (requset):
-    return render(requset,'aminicar/main/base.html', {'name':'saeedamini'})
+    return render(requset,'aminicar/main/index_base.html')
 
 def show_product (requset):
     return render(requset,'aminicar/main/show_product.html')

@@ -1,3 +1,4 @@
+
 {% extends 'aminicar/main/base.html' %}
 {% load static%}
 {%  block content %} 
@@ -26,7 +27,7 @@
 				<div class="col-md-4 col-xs-12">
 					<div class="shop">
 						<div class="shop-img">
-							<img src="{{ url_for('static', filename='./img/2630035505/2630035505(2).jpg ') }}" alt="">
+							<img src="./img/2630035505/2630035505(2).jpg " alt="">
 						</div>
 						<div class="shop-body">
 							<h3>
@@ -40,180 +41,6 @@
 				<!-- /shop -->
 				
 				<!-- shop -->
-
-				<div class="col-md-4 col-xs-12">
-					<div class="shop">
-						<div class="shop-img">
-							<img src="{{ url_for('static', filename='./img/2630035505/2630035505(2).jpg ') }}" alt="">
-						</div>
-						<div class="shop-body">
-							<h3>
-								mark <br>name
-							</h3>
-							<a href="#" class="cta-btn">AF 35,000 <i
-								class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /shop -->
-				
-				<!-- shop -->
-				<div class="col-md-4 col-xs-12">
-					<div class="shop">
-						<div class="shop-img">
-							<img src="{{ url_for('static', filename='./img/2630035505/2630035505(2).jpg ') }}" alt="">
-						</div>
-						<div class="shop-body">
-							<h3>
-								mark <br>name
-							</h3>
-							<a href="#" class="cta-btn">AF 35,000 <i
-								class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /shop -->
-				
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /SECTION -->
-
-
-
-
-
-
-
-	<!-- SECTION -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-
-				<!-- Company details -->
-				<div class="col-md-12">
-					<div class="Company-details">
-
-
-						<p class="farsi">
-						<h1 class="Company-name">Smart Car</h1>
-						<h4>
-							با خوش آمدگویی به Smart Car <br> بهترین منبع برای لوازم یدکی
-							ماشین‌های هیوندایی در تهران! <br> Smart Car یک شرکت است که
-							با هدف فراهم کردن بهترین لوازم یدکی ماشین‌های هیوندایی در تهران
-							تأسیس شده است. ما به ارمغان می‌آوریم کیفیتی بی‌نظیر و خدماتی
-							استثنایی برای مشتریان عزیزمان. <br> با ما، مطمئن باشید که هر
-							قطعه یدکی که از Smart Car تهیه می‌کنید، از بهترین کیفیت و
-							استانداردهای بین‌المللی برخوردار است. ما با انتخاب دقیق و اخذ
-							محصولات از منابع معتبر خارجی، اطمینان حاصل می‌کنیم که ماشین شما
-							همواره در بهترین حالت ممکن عمل می‌کند. به عنوان یک شرکت تازه
-							‌تأسیس، Smart Car از اینکه به جمع مشتریان ما اضافه شوید، بسیار
-							خوشحال خواهد شد. بازدید از وب‌سایت ما و تجربه کردن خدمات ما، به
-							شما نشان خواهد داد که چرا Smart Car انتخاب مناسبی برای تأمین
-							لوازم یدکی ماشین‌های هیوندایی در تهران است. <br> با تشکر از
-							اعتماد شما، ما در Smart Car متعهدیم تا همیشه بهترین خدمات و
-							محصولات را به شما ارائه دهیم.
-						</h4>
-						</p>
-
-
-
-					</div>
-				</div>
-
-
-
-			</div>
-			<!-- row -->
-		</div>
-		<!-- container -->
-	</div>
-	<!-- /SECTION -->
-
-
-	<!-- NEWSLETTER -->
-	<div id="newsletter" class="section"></div>
-	<!-- NEWSLETTER -->
-
-	<!-- SECTION -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-
-				<!-- section title -->
-				<div class="col-md-12">
-					<div class="section-title">
-
-						<div class="section-nav">
-							<ul class="section-tab-nav tab-nav">
-								<h1>محصولات جذاب ما</h1>
-
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /section title -->
-
-
-				<!-- Products tab & slick -->
-				<div class="col-md-12">
-					<div class="row">
-						<div class="products-tabs">
-							<!-- tab -->
-							<div id="tab1" class="tab-pane active">
-								<div class="products-slick" data-nav="#slick-nav-1">
-									{% for products in products %}
-									<!-- product -->
-									<div class="product">
-										<div class="product-img">
-											<img src="{{ url_for('static', filename='img/' + products['image_name']) }}" alt="">
-											<div class="product-label">
-												<span class="sale">-30%</span> <span class="new">NEW</span>
-											</div>
-										</div>
-										<div class="product-body">
-											<p class="product-sumsong">{{ products['product_mark'] }}</p>
-											<h3 class="product-name"><a href="{{ url_for('views.show_product', product_id=products['product_ID']) }}">{{ products['product_name'] }}</a></h3>
-											<p class="product-explan">{{ products['product_port'] }}</p>
-											<div class="product-rating">
-												<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-											</div>
-											<div class="product-btns">
-												<button class="add-to-wishlist">
-													<i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span>
-												</button>
-												<button class="quick-view">
-													<i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول</span>
-												</button>
-											</div>
-										</div>
-										<div class="add-to-cart">
-											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> <a href="{{ url_for('views.show_product', product_id=products['product_ID']) }}">نمایش محصول</a>
-											</button>
-										</div>
-									</div>
-									{% endfor %}
-									</div>
-								<div id="slick-nav-1" class="products-slick-nav"></div>
-							</div>
-							<!-- /tab -->
-						</div>
-					</div>
-				</div>
-				<!-- Products tab & slick -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /SECTION -->
 
 
 	<!-- NEWSLETTER -->
