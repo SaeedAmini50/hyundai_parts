@@ -6,8 +6,17 @@ from aminicar.models import Account
 from django.conf import settings
 from django.contrib import messages 
 
+
+
+
+
+
+
+
 def indexAdmin (requset):
     return render(requset,'aminicar/dashboard/indexAdmin.html')
+
+
 
 
 def H2630035505 (requset):
@@ -31,6 +40,13 @@ def  H3C10028164 (requset):
 
 
 
+
+def errorpage (requset):
+    return render(requset,'aminicar/form/errorpage.html')
+
+
+def not_find (requset):
+    return render(requset,'aminicar/form/404.html')
 
 
 
