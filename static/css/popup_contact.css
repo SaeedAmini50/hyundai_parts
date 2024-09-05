@@ -89,6 +89,13 @@ body {
         font-size: 16px;
     }
   }
+  .message.success {
+    color: green;
+}
+
+.message.error {
+    color: red;
+}
 
   /*=========================================================
 	13 ->  Contact Form

@@ -122,6 +122,19 @@ h1{
   color: #FFF;
 }
 
+
+/*----------------------------*\
+	 show_product
+\*----------------------------*/
+
+
+.explan_product {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+
 /*----------------------------*\
 	Inputs
 \*----------------------------*/
@@ -1427,7 +1440,7 @@ textarea.input {
 
 .product-details .product-name {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 30px;
 }
 
 .product-details .product-rating {
@@ -2175,6 +2188,5 @@ overflow:auto;
   height:10%;
   overflow:hidden;
 }
-
 
 

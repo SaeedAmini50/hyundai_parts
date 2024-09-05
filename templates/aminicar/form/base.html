@@ -31,10 +31,23 @@
 <link href="{% static '' %}cssAdmin/style.css" rel="stylesheet">
  
  
+<!-- Template Stylesheet popup -->
+<link href="{% static '' %}cssAdmin/popup_contact.css" rel="stylesheet">
+ 
+ 
   </head>
 
   <body>
+          
+    <div id="popup" class="popup">
+      <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <p id="popup-message"></p>
+          <button id="okBtn" class="ok-btn">باشه</button>
+        </div>
+      </div>
 
+  
 
     <div class="container-fluid position-relative d-flex p-0">
       <!-- Spinner Start -->
@@ -76,7 +89,7 @@
 <script src="{% static '' %}libAdmin/tempusdominus/js/moment.min.js"></script>
 <script src="{% static '' %}libAdmin/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="{% static '' %}libAdmin/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
+<script src="{% static '' %}js/popup.js"></script>
 <!-- Template Javascript -->
 <script src="{% static '' %}jsAdmin/main.js"></script>
 

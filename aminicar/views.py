@@ -4,10 +4,34 @@ from .forms import AccountAuthenticationForm , RegistrationForm
 from django.contrib.auth import authenticate, login ,logout
 from aminicar.models import Account
 from django.conf import settings
- 
+from django.contrib import messages 
 
 def indexAdmin (requset):
     return render(requset,'aminicar/dashboard/indexAdmin.html')
+
+
+def H2630035505 (requset):
+    return render(requset,'aminicar/product/2630035505/2630035505.html')
+
+
+def H319102H000 (requset):
+    return render(requset,'aminicar/product/319102H000/319102H000.html')
+
+def H2351025250 (requset):
+    return render(requset,'aminicar/product/2351025250/2351025250.html')
+
+def H311121R000 (requset):
+    return render(requset,'aminicar/product/311121R000/311121R000.html')
+
+def H273012B010 (requset):
+    return render(requset,'aminicar/product/273012B010/273012B010.html')
+
+def  H3C10028164 (requset):
+    return render(requset,'aminicar/product/3C10028164/3C10028164.html')
+
+
+
+
 
 
 
@@ -19,18 +43,19 @@ def index (requset):
 def base (requset):
     return render(requset,'aminicar/main/index_base.html')
 
-def show_product (requset):
-    return render(requset,'aminicar/main/show_product.html')
+def show_product(request):
+    # ارسال پیام موفقیت به درخواست
+    messages.success(request, 'خوش آمدید!')
+    
+    # رندر کردن صفحه HTML
+    return render(request, 'aminicar/main/show_product.html')
 
- 
-def signup (requset):
-    return render(requset,'aminicar/form/signup.html')
 
 
  
 def index(requset):
     return render(requset, 'aminicar/main/index.html')
- 
+    
 
 def register_signin(request):
     context = {}
@@ -45,21 +70,23 @@ def register_signin(request):
             email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password')
             user = authenticate(email=email, password=raw_password)
-
-        
+       
             if user:
-                login(request, user)
-                return redirect('aminicar:index')
+                 
+                 login(request, user)
+                 messages.success(request, 'welcame')
+                 return redirect('aminicar:index')
         else:
-            print(form.errors) 
+            messages.error(request, 'excuse me') 
     else:
         form = AccountAuthenticationForm()
+        messages.error(request, 'complete')
     
     context['login_form'] = form
 
     return render(request, 'aminicar/form/signin.html', context)
 
-
+ 
 
 def register_signup(request, *args, **kwargs):
     user = request.user
@@ -87,7 +114,6 @@ def register_signup(request, *args, **kwargs):
         form = RegistrationForm()
         context['registration_form'] = form
     return render(request, 'aminicar/form/signup.html', context)
-
 
 def logout_view(request):
     logout(request)
