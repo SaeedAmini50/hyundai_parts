@@ -11,6 +11,7 @@ H311121R000,
 H273012B010,
 H3C10028164,
 errorpage,
+edit_account_view,
 not_find,
 
 logout_view)
@@ -35,6 +36,7 @@ urlpatterns = [
        path('logout/', logout_view , name='logout'),
       path('errorpage/', errorpage , name='errorpage'),
        path('not_find/', not_find , name='not_find'),
-         path('indexAdmin/', indexAdmin , name='indexAdmin')
+         path('indexAdmin/', indexAdmin , name='indexAdmin'),
+           path('<user_id>/profile/', edit_account_view , name='profile')
 
 ]

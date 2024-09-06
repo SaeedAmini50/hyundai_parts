@@ -1,0 +1,81 @@
+{% extends 'aminicar/main/base.html' %}
+{% load static%}
+{%  block content %} 
+
+<div class="container">
+<div class="row gutters">
+	<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" >
+		<div class="card h-100">
+			<div class="card-body">
+				<div class="account-settings" >
+					<div class="user-profile">
+						<div class="user-avatar">
+							<img src="{{user.profile_image.url}}" alt="Maxwell Admin">
+						</div>
+						<h4 class="user-name">{{user.username}}</h4>
+						
+					</div>
+					<div class="about">
+						<h5 class="mb-2 text-primary">توجه</h5>
+						<p >میتوانید عکس خود را در بالا اضافه کنید</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		     		
+	<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+		<div class="card h-100">
+			<div class="card-body">
+			
+					<form  method="post" enctype="multipart/form-data">
+						{%csrf_token%}
+				<div class="row gutters">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<h3 class="mb-3 text-primary">مشخصات پروفایل شما</h3>
+					</div>		
+					
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+						<div class="form-group">
+							<label for="name">اسم</label>
+							<input type="text" value="{{user.username}}" name="username"  class="form-control" id="fullName" placeholder="اسم شما">
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+						<div class="form-group">
+							<label for="email">ایمیل</label>
+							<input type="email" value="{{user.email}}" name="email" class="form-control" id="email" placeholder="ایمیل شما">
+						</div>
+					</div>
+						
+		
+					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+						<div class="form-group">
+							<label >برای عوض کردن عکس پروفایل خود کلیک کنید</label>
+							<input   type="file" value="change profile" name="profile_image" class="form-control" >
+						</div>
+					</div>
+		
+					
+				</div>
+			
+				<div class="row gutters">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="text-right">
+							<button   id="submit" name="submit" class="btn btn-secondary"><a href="">change password</a></button>
+							<button type="submit" id="submit" name="submit" class="btn btn-primary">Update</button>
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</div>
+
+</body>
+</html>
+  <!-- FOOTER -->
+{% endblock %}
