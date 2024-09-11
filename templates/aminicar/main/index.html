@@ -139,7 +139,7 @@
   
   <div class="section-nav">
   <ul class="section-tab-nav tab-nav">
-  <h1><li class="active"><a name="TV" data-toggle="tab" href="storeTV.html">تلویزیون</a></li></h1>
+  <h1><li class="active">محصولات ما</li></h1>
   
   </ul>
   </div>
@@ -154,10 +154,15 @@
   <!-- tab -->
   <div id="tab1" class="tab-pane active">
   <div class="products-slick" data-nav="#slick-nav-1">
-  <!-- product -->
+  
+  
+  
+    {% if products %}
+    {% for product in products %}
+    <!-- product -->
   <div class="product">
   <div class="product-img">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
     
   <div class="product-label">
   <span class="sale">-30%</span>
@@ -165,9 +170,9 @@
   </div>
   </div>
   <div class="product-body">
-  <p class="product-sumsong">فیلتر روغن HYUNDAI</p>
-  <h3 class="product-name"><a href="#">2630035505 part number</a></h3>
-  <h4 class="product-price">2,250,000 ریال</h4>
+  <p class="product-sumsong">{{product.mark}}</p>
+  <h3 class="product-name"><a href="#">{{product.port}} part number</a></h3>
+  <h4 class="product-price">{{product.price}}</h4>
   <div class="product-rating">
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>
@@ -185,198 +190,17 @@
   </div>
   </div>
   <div class="add-to-cart">
-  <button class="add-to-cart-btn"><a href="{%url 'aminicar:H2630035505'%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
+  <button class="add-to-cart-btn"><a href="{%url 'product:product_detail' product_id=product.id%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
  
      
 </div>
   </div>
   <!-- /product -->
-
-  <!-- product -->
-  <div class="product">
-    <div class="product-img">
-      <img src="{% static '' %}./product/3C10028164/3C10028164(1).jpg" alt="">
-      
-    <div class="product-label">
-    <span class="sale">-30%</span>
-    <span class="new">NEW</span>
-    </div>
-    </div>
-    <div class="product-body">
-    <p class="product-sumsong">فیلتر روغن HYUNDAI</p>
-    <h3 class="product-name"><a href="#">3C10028164 part number</a></h3>
-    <h4 class="product-price">2,250,000 ریال</h4>
-    <div class="product-rating">
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    </div>
-    <div class="product-btns">
-    	<button class="add-to-wishlist">
-        <i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span>
-      </button>
-      <button class="quick-view">
-        <i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول</span>
-      </button>
-    </div>
-    </div>
-    <div class="add-to-cart">
-    <button class="add-to-cart-btn"><a href="{%url 'aminicar:H3C10028164'%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
-    
-  </div>
-    </div>
-    <!-- /product -->
-    
-    <!-- product -->
-  <div class="product">
-    <div class="product-img">
-      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-      
-    <div class="product-label">
-    <span class="sale">-30%</span>
-    <span class="new">NEW</span>
-    </div>
-    </div>
-    <div class="product-body">
-    <p class="product-sumsong">فیلتر روغن HYUNDAI</p>
-    <h3 class="product-name"><a href="#">273012B010 part number</a></h3>
-    <h4 class="product-price">2,250,000 ریال</h4>
-    <div class="product-rating">
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    </div>
-    <div class="product-btns">
-      <button class="add-to-wishlist">
-        <i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span>
-      </button>
-      <button class="quick-view">
-        <i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول</span>
-      </button>
-    </div>
-    </div>
-    <div class="add-to-cart">
-    <button class="add-to-cart-btn"><a href="{%url 'aminicar:H273012B010'%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
-      </div>
-    </div>
-    <!-- /product -->
-    
+  {% endfor %}
   
-    <!-- product -->
-  <div class="product">
-    <div class="product-img">
-      <img src="{% static '' %}./product/311121R000/311121R000(1).webp" alt="">
-      
-    <div class="product-label">
-    <span class="sale">-30%</span>
-    <span class="new">NEW</span>
-    </div>
-    </div>
-    <div class="product-body">
-    <p class="product-sumsong">فیلتر روغن HYUNDAI</p>
-    <h3 class="product-name"><a href="#">311121R000 part number</a></h3>
-    <h4 class="product-price">2,250,000 ریال</h4>
-    <div class="product-rating">
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    </div>
-    <div class="product-btns">
-      <button class="add-to-wishlist">
-        <i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span>
-      </button>
-      <button class="quick-view">
-        <i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول</span>
-      </button>
-    </div>
-    </div>
-    <div class="add-to-cart">
-    <button class="add-to-cart-btn"><a href="{%url 'aminicar:H311121R000'%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
-      </div>
-    </div>
-    <!-- /product -->
-    
-  
-    <!-- product -->
-  <div class="product">
-    <div class="product-img">
-      <img src="{% static '' %}./product/2351025250/2351025250(1).jpg" alt="">
-      
-    <div class="product-label">
-    <span class="sale">-30%</span>
-    <span class="new">NEW</span>
-    </div>
-    </div>
-    <div class="product-body">
-    <p class="product-sumsong">فیلتر روغن HYUNDAI</p>
-    <h3 class="product-name"><a href="#">2351025250 part number</a></h3>
-    <h4 class="product-price">2,250,000 ریال</h4>
-    <div class="product-rating">
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    </div>
-    <div class="product-btns">
-      <button class="add-to-wishlist">
-        <i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span>
-      </button>
-      <button class="quick-view">
-        <i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول</span>
-      </button>
-    </div>
-    </div>
-    <div class="add-to-cart">
-    <button class="add-to-cart-btn"><a href="{%url 'aminicar:H2351025250'%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
-      </div>
-    </div>
-    <!-- /product -->
-    
-  
-    <!-- product -->
-  <div class="product">
-    <div class="product-img">
-      <img src="{% static '' %}./product/319102H000/319102H000(1).jpeg" alt="">
-      
-    <div class="product-label">
-    <span class="sale">-30%</span>
-    <span class="new">NEW</span>
-    </div>
-    </div>
-    <div class="product-body">
-    <p class="product-sumsong">فیلتر روغن HYUNDAI</p>
-    <h3 class="product-name"><a href="#">319102H000 part number</a></h3>
-    <h4 class="product-price">2,250,000 ریال</h4>
-    <div class="product-rating">
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    </div>
-    <div class="product-btns">
-      <button class="add-to-wishlist">
-        <i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span>
-      </button>
-      <button class="quick-view">
-        <i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول</span>
-      </button>
-    </div>
-    </div>
-    <div class="add-to-cart">
-    <button class="add-to-cart-btn"><a href="{%url 'aminicar:H319102H000'%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
-      </div>
-    </div>
-    <!-- /product -->
-    
-    
+  {%else%}
+  <h1>no content</h1>
+  {% endif %}
 
 
 
@@ -456,304 +280,306 @@
 <!-- NEWSLETTER -->
 
 
+
   <!-- SECTION -->
   <div class="section">
-  <!-- container -->
-  <div class="container">
-  <!-- row -->
-  <div class="row">
-  <div class="col-md-4 col-xs-6">
-  <div class="section-title">
-  <h4 class="title">تمام محصولات</h4>
-  <div class="section-nav">
-  <div id="slick-nav-3" class="products-slick-nav"></div>
-  </div>
-  </div>
+    <!-- container -->
+    <div class="container">
+    <!-- row -->
+    <div class="row">
+    <div class="col-md-4 col-xs-6">
+    <div class="section-title">
+    <h4 class="title">تمام محصولات</h4>
+    <div class="section-nav">
+    <div id="slick-nav-3" class="products-slick-nav"></div>
+    </div>
+    </div>
+    
+    <div class="products-widget-slick" data-nav="#slick-nav-3">
+    <div>
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- product widget -->
+    </div>
+    
+    <div>
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
   
-  <div class="products-widget-slick" data-nav="#slick-nav-3">
-  <div>
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
     <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
   
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- product widget -->
-  </div>
-  
-  <div>
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    
+    <!-- product widget -->
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-md-4 col-xs-6">
+    <div class="section-title">
+    <h4 class="title">تمام محصولات</h4>
+    <div class="section-nav">
+    <div id="slick-nav-4" class="products-slick-nav"></div>
+    </div>
+    </div>
+    
+    <div class="products-widget-slick" data-nav="#slick-nav-4">
+    <div>
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
     <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- product widget -->
+    </div>
+    
+    <div>
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+   
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- product widget -->
+    </div>
+    </div>
+    </div>
+    
+    <div class="clearfix visible-sm visible-xs"></div>
+    
+    <div class="col-md-4 col-xs-6">
+    <div class="section-title">
+    <h4 class="title">تمام محصولات</h4>
+    <div class="section-nav">
+    <div id="slick-nav-5" class="products-slick-nav"></div>
+    </div>
+    </div>
+    
+    <div class="products-widget-slick" data-nav="#slick-nav-5">
+    <div>
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- product widget -->
+    </div>
+    
+    <div>
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
+    
+    </div>
+    </div>
+    <!-- /product widget -->
+    
+    <!-- product widget -->
+    <div class="product-widget">
+    <div class="product-img">
+      <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
+    </div>
+    <div class="product-body">
+    <p class="product-sumsong">HYUNDAI</p>
+    <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
+    
+    </div>
+    </div>
+    <!-- product widget -->
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    <!-- /row -->
+    </div>
+    <!-- /container -->
+    </div>
+    <!-- /SECTION -->
   
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-  <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
-  
-  </div>
-  </div>
-  
-  <!-- product widget -->
-  </div>
-  </div>
-  </div>
-  
-  <div class="col-md-4 col-xs-6">
-  <div class="section-title">
-  <h4 class="title">تمام محصولات</h4>
-  <div class="section-nav">
-  <div id="slick-nav-4" class="products-slick-nav"></div>
-  </div>
-  </div>
-  
-  <div class="products-widget-slick" data-nav="#slick-nav-4">
-  <div>
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-  <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
-  
-  </div>
-  </div>
-  <!-- product widget -->
-  </div>
-  
-  <div>
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
- 
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- product widget -->
-  </div>
-  </div>
-  </div>
-  
-  <div class="clearfix visible-sm visible-xs"></div>
-  
-  <div class="col-md-4 col-xs-6">
-  <div class="section-title">
-  <h4 class="title">تمام محصولات</h4>
-  <div class="section-nav">
-  <div id="slick-nav-5" class="products-slick-nav"></div>
-  </div>
-  </div>
-  
-  <div class="products-widget-slick" data-nav="#slick-nav-5">
-  <div>
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
-  
-  </div>
-  </div>
-  <!-- product widget -->
-  </div>
-  
-  <div>
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storeTV.html">2630035505</a></h3>
-  
-  </div>
-  </div>
-  <!-- /product widget -->
-  
-  <!-- product widget -->
-  <div class="product-widget">
-  <div class="product-img">
-    <img src="{% static '' %}./product/273012B010/273012B010(1).jpg" alt="">
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">HYUNDAI</p>
-  <h3 class="product-name"><a href="storemachin.html">273012B010</a></h3>
-  
-  </div>
-  </div>
-  <!-- product widget -->
-  </div>
-  </div>
-  </div>
-  
-  </div>
-  <!-- /row -->
-  </div>
-  <!-- /container -->
-  </div>
-  <!-- /SECTION -->
-
+    
   
 
   

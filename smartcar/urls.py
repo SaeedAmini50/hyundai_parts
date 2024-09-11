@@ -4,11 +4,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
-
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('aminicar.urls')),
-
+    path('',include('product.urls')),
     # Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='aminicar/form/password_reset/password_change_done.html'),
         name='password_change_done'),
@@ -25,13 +25,7 @@ urlpatterns = [
 
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='aminicar/form/password_reset/password_reset_complete.html'),
      name='password_reset_complete'),
-
-
-    
 ]
-
-
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

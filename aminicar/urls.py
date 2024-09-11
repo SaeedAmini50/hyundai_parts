@@ -20,7 +20,7 @@ app_name = 'aminicar'
 
 
 urlpatterns = [
-    path('', index , name='index'),
+    
     path('show_product/', show_product , name='show_product'),
       path('index', index , name='index'),
         path('signin/', register_signin , name='signin'),
