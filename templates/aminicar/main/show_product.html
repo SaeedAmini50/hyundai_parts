@@ -12,19 +12,19 @@
 <div class="col-md-5 col-md-push-2">
 <div id="product-main-img">
 <div class="product-preview">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
 </div>
 
 <div class="product-preview">
-    <img src="{% static '' %}./product/2630035505/2630035505(3).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
 </div>
 
 <div class="product-preview">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
 </div>
 
 <div class="product-preview">
-    <img src="{% static '' %}./product/2630035505/2630035505(3).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
 </div>
 </div>
 </div>
@@ -34,19 +34,19 @@
 <div class="col-md-2  col-md-pull-5">
 <div id="product-imgs">
 <div class="product-preview">
-<img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+<img src="{{product.image.url}}" alt="">
 </div>
 
 <div class="product-preview">
-    <img src="{% static '' %}./product/2630035505/2630035505(3).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
 </div>
 
 <div class="product-preview">
-    <img src="{% static '' %}./product/2630035505/2630035505(2).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
 </div>
 
 <div class="product-preview">
-    <img src="{% static '' %}./product/2630035505/2630035505(3).jpg" alt="">
+    <img src="{{product.image.url}}" alt="">
 </div>
 </div>
 </div>
@@ -70,8 +70,9 @@
 <h3 class="product-price">ریال{{product.price}}  <del class="product-old-price">2,300,000 ریال  </del></h3>
 <span class="product-available">In Stock</span>
 </div>
+{% csrf_token %}
 <p class="explan_product">{{product.description}}</p>
-
+<input type="hidden" value="{{product.id}}" class="product_id" >
 <div class="add-to-cart">
 
 <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -98,7 +99,8 @@
 <!-- /container -->
 </div>
 <!-- /section -->
-  
+<script src="{% static '' %}js/cart.js" type="text/javascript" ></script>
 <!-- FOOTER -->
+
 {% endblock %}
 
