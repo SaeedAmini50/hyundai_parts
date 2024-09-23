@@ -55,6 +55,10 @@
 <!-- Product details -->
 <div class="col-md-5">
 <div class="product-details">
+    {% csrf_token %}
+        
+<input type="hidden" value="{{product.id}}" class="prodt_id">
+
 <h2 class="product-name">{{product.mark}}</h2>
 <div>
 <div class="product-rating">
