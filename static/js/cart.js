@@ -2,7 +2,7 @@ $('.add-to-cart-btn').click(function (e) {
     e.preventDefault();
     console.log("Button Clicked");
 
-    let product_id = $(this).closest('.product-details').find('.prodt_id').val();
+    let product_id = $(this).closest('.add-to-cart').find('.prodt_id').val();
     console.log("Product ID:", product_id);
 
     let token = $('input[name=csrfmiddlewaretoken]').val();
@@ -10,7 +10,7 @@ $('.add-to-cart-btn').click(function (e) {
 
     $.ajax({
         method: "POST",
-        url: "/add_to_cart/",  // مسیر به‌روز شده
+        url: "/add_to_cart/",
         data: {
             'product_id': product_id,
             'csrfmiddlewaretoken': token

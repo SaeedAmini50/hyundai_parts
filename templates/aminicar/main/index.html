@@ -155,53 +155,47 @@
   <div id="tab1" class="tab-pane active">
   <div class="products-slick" data-nav="#slick-nav-1">
   
-  
-  
     {% if products %}
     {% for product in products %}
+    {% csrf_token %}
     <!-- product -->
-  <div class="product">
-  <div class="product-img">
-    <img src="{{product.image.url}}" alt="">
-    
-  <div class="product-label">
-  <span class="sale">-30%</span>
-  <span class="new">NEW</span>
-  </div>
-  </div>
-  <div class="product-body">
-  <p class="product-sumsong">{{product.mark}}</p>
-  <h3 class="product-name"><a href="#">{{product.port}} part number</a></h3>
-  <h4 class="product-price">{{product.price}}</h4>
-  <div class="product-rating">
-  <i class="fa fa-star"></i>
-  <i class="fa fa-star"></i>
-  <i class="fa fa-star"></i>
-  <i class="fa fa-star"></i>
-  <i class="fa fa-star"></i>
-  </div>
-  <div class="product-btns">
-  	<button class="add-to-wishlist">
-      <i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span>
-    </button>
-    <button class="quick-view">
-      <i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول</span>
-    </button>
-  </div>
-  </div>
-  <div class="add-to-cart">
-  <button class="add-to-cart-btn"><a href="{%url 'product:product-details' product_id=product.id%}"><i class="fa fa-shopping-cart"></i> نمایش محصول</a></button>
- 
-     
-</div>
-  </div>
-  <!-- /product -->
-  {% endfor %}
-  
-  {%else%}
-  <h1>no content</h1>
-  {% endif %}
+    <div class="product">
+        <div class="product-img">
+            <img src="{{product.image.url}}" alt="">
+            <div class="product-label">
+                <span class="sale">-30%</span>
+                <span class="new">NEW</span>
+            </div>
+        </div>
+        <div class="product-body">
+            <p class="product-sumsong">{{product.mark}}</p>
+            <h3 class="product-name"><a href="#">{{product.port}} part number</a></h3>
+            <h4 class="product-price">{{product.price}}</h4>
+            <div class="product-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="product-btns">
+                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">اضافه کردن به لیست دلخواه</span></button>
+                <button class="quick-view"><a href="{%url 'product:product_detail' product_id=product.id%}"><i class="fa fa-eye"></i>
+                  </a><span class="tooltipp">نمایش محصول</span></button>
+            
+              </div>
+        </div>
 
+        <div class="add-to-cart">
+            <input type="hidden" class="prodt_id" value="{{ product.id }}">
+            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> افزودن به سبد خرید</button>
+        </div>
+    </div>
+    <!-- /product -->
+    {% endfor %}
+{% else %}
+    <h1>no content</h1>
+{% endif %}
 
 
   </div>
