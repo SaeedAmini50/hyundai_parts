@@ -2,7 +2,7 @@ $('.add-to-cart-btn').click(function (e) {
     e.preventDefault();
     console.log("Button Clicked");
 
-    let product_id = $(this).closest('.add-to-cart').find('.prodt_id').val();
+    let product_id = $(this).closest('.product-details').find('.prodt_id').val();
     console.log("Product ID:", product_id);
 
     let token = $('input[name=csrfmiddlewaretoken]').val();

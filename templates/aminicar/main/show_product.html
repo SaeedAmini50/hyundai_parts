@@ -56,8 +56,6 @@
 <div class="col-md-5">
 <div class="product-details">
     {% csrf_token %}
-        
-<input type="hidden" value="{{product.id}}" class="prodt_id">
 
 <h2 class="product-name">{{product.mark}}</h2>
 <div>
@@ -76,10 +74,13 @@
 </div>
 <p class="explan_product">{{product.description}}</p>
 
-<div class="add-to-cart">
 
-<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+<div class="add-to-cart">
+    
+    <input type="hidden" class="prodt_id" value="{{ product.id }}">
+    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> افزودن به سبد خرید</button>
 </div>
+
 
 <ul class="product-btns">
 <li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
