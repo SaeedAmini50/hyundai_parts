@@ -13,7 +13,6 @@ H3C10028164,
 errorpage,
 edit_account_view,
 not_find,
-
 logout_view)
   
 app_name = 'aminicar'  
@@ -37,6 +36,9 @@ urlpatterns = [
       path('errorpage/', errorpage , name='errorpage'),
        path('not_find/', not_find , name='not_find'),
          path('indexAdmin/', indexAdmin , name='indexAdmin'),
-           path('<user_id>/profile/', edit_account_view , name='profile')
+         
+        
+
+            path('<user_id>/profile/', edit_account_view , name='profile')
 
 ]

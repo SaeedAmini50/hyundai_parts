@@ -17,6 +17,8 @@
     rel="stylesheet"
     href="{% static '' %}css/popup_contact.css"
   />
+
+  
     <link
       type="text/css"
       rel="stylesheet"
@@ -159,65 +161,48 @@
                 </div>
                 <!-- /Wishlist -->
 
-                <!-- Cart -->
-                <div class="dropdown">
-                  <a
-                    class="dropdown-toggle"
-                    data-toggle="dropdown"
-                    aria-expanded="true"
-                  >
-                    <i class="fa fa-shopping-cart"></i> <span>Your Cart</span>
-                    <div class="qty">3</div>
-                  </a>
-                  <div class="cart-dropdown">
-                    <div class="cart-list">
-                      <div class="product-widget">
-                        <div class="product-img">
-                          <img src="{% static '' %}./img/product6.jpg" alt="" />
-                        </div>
-                        <div class="product-body">
-                          <h3 class="product-name">
-                            <a href="#">لباسشویی</a>
-                          </h3>
-                          <h4 class="product-price">
-                            <span class="qty">1x</span>ریال 16000
-                          </h4>
-                        </div>
-                        <button class="delete">
-                          <i class="fa fa-close"></i>
-                        </button>
-                      </div>
 
-                      <div class="product-widget">
-                        <div class="product-img">
-                          <img src="{% static '' %}./img/product6.jpg" alt="" />
-                        </div>
-                        <div class="product-body">
-                          <h3 class="product-name">
-                            <a href="#">تلویزیون</a>
-                          </h3>
-                          <h4 class="product-price">
-                            <span class="qty">3x</span>ریال 8000
-                          </h4>
-                        </div>
-                        <button class="delete">
-                          <i class="fa fa-close"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="cart-summary">
-                      <small>تعداد انتخاب شده 2</small>
-                      <h5>کل پول : ریال 38000</h5>
-                    </div>
-                    <div class="cart-btns">
-                      <a href="#">View Cart</a>
-                      <a href="#"
-                        >Checkout <i class="fa fa-arrow-circle-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-                <!-- /Cart -->
+<!-- Cart -->
+<div class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+    <i class="fa fa-shopping-cart"></i> <span>سبد خرید شما</span>
+    <div class="qty">{{ cart_total }}</div>
+  </a>
+  <div class="cart-dropdown">
+    <div class="cart-list">
+      
+      {% for item in cart_items %}
+      <div class="product-widget">
+        <div class="product-img">
+          <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" />
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">
+            <a href="#">{{ item.product.name }}</a>
+          </h3>
+          <h4 class="product-price">
+            <span class="qty">{{ item.quantity }}x</span> ریال {{ item.product.price }}
+          </h4>
+        </div>
+        <button class="delete" data-product-id="{{ item.product.id }}">
+          <i class="fa fa-close"></i>
+        </button>
+      </div>
+      {% endfor %}
+      
+    </div>
+    <div class="cart-summary">
+      <small>تعداد انتخاب شده: {{ cart_total }} </small>
+      <h5>کل پول: ریال {{ total_price }}</h5>
+    </div>
+    <div class="cart-btns">
+    <!-- -->  <a href="{%url 'product:checkout'%}">مشاهده سبد خرید</a>
+      <a href="">پرداخت <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
+</div>
+<!-- /Cart -->
+
 
                 <!-- Menu Toogle -->
                 <div class="menu-toggle">
