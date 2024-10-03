@@ -32,31 +32,23 @@
 						<!-- Billing Details -->
 						<div class="billing-details">
 							<div class="section-title">
-								<h3 class="title">Billing address</h3>
+								<h3 class="title">آدرس تحویل محصول</h3>
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="first-name" placeholder="First Name">
+								<input class="input" type="text" name="city" placeholder="شهر">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="last-name" placeholder="Last Name">
+								<input class="input" type="text" name="address" placeholder="آدرس">
+							</div>
+		
+							<div class="form-group">
+								<input class="input" type="text" name="post-code" placeholder="کد پستی">
 							</div>
 							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
+								<input class="input" type="tel" name="tel" placeholder="شماره تلفن">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="country" placeholder="Country">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="post-code" placeholder="ZIP Code">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
+								<input class="input" type="email" name="email" placeholder=" ایمیل">
 							</div>
 							<div class="form-group">
 								<div class="input-checkbox">
@@ -71,7 +63,7 @@
 
 						<!-- Order notes -->
 						<div class="order-notes">
-							<textarea class="input" placeholder="Order Notes"></textarea>
+							<textarea class="input" placeholder="معلومات اضافی"></textarea>
 						</div>
 						<!-- /Order notes -->
 					</div>
@@ -79,32 +71,34 @@
 					<!-- Order Details -->
 					<div class="col-md-5 order-details">
 						<div class="section-title text-center">
-							<h3 class="title">Your Order</h3>
+							<h3 class="title">درخواست های شما {{ cart_total }} هستند </h3>
 						</div>
 						<div class="order-summary">
 							<div class="order-col">
-								<div><strong>PRODUCT</strong></div>
-								<div><strong>TOTAL</strong></div>
+								<div><strong>شماره پارت</strong></div>
+								<div><strong>اسم و مارک</strong></div>
+								<div><strong > قیمت</strong></div>
 							</div>
 							
 							{% for item in cart_items %}
 							<div class="order-products">
 								<div class="order-col">
 									
-									<div>{{ item.product.price }}</div>
-									<div>{{ item.product.price }}</div>
+									<div>{{ item.product.title }}</div>
+									<div>{{ item.product.mark }}</div>
+									<div>{{ item.quantity }}x ریال {{ item.product.price }}</div>
 								</div>
 								
 							</div>
 							{%endfor%}
 							
 							<div class="order-col">
-								<div>Shiping</div>
-								<div><strong>FREE</strong></div>
+								<div>انتقال محصولات </div>
+								<div><strong>رایگان</strong></div>
 							</div>
 							<div class="order-col">
-								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">$2940.00</strong></div>
+								<div><strong>مجموعه قیمت </strong></div>
+								<div><strong class="order-total">{{total_price}}</strong></div>
 							</div>
 						</div>
 						<div class="payment-method">
@@ -112,30 +106,21 @@
 								<input type="radio" name="payment" id="payment-1">
 								<label for="payment-1">
 									<span></span>
-									Direct Bank Transfer
+									از طریق بانک
 								</label>
 								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									<p>محصول شما بعد دو روز به دست شما میرسد</p>
 								</div>
 							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2">
-								<label for="payment-2">
-									<span></span>
-									Cheque Payment
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div>
+			
 							<div class="input-radio">
 								<input type="radio" name="payment" id="payment-3">
 								<label for="payment-3">
 									<span></span>
-									Paypal System
+									پول نقد
 								</label>
 								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									<p>بعد ۴ ساعت به دست شما میرسد</p>
 								</div>
 							</div>
 						</div>
@@ -143,7 +128,7 @@
 							<input type="checkbox" id="terms">
 							<label for="terms">
 								<span></span>
-								I've read and accept the <a href="#">terms & conditions</a>
+								من موافقم با  <a href="#">قوانین</a>
 							</label>
 						</div>
 						<a href="#" class="primary-btn order-submit">Place order</a>
