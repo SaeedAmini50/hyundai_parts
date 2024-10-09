@@ -11,13 +11,13 @@
 
     <title>Smart Car</title>
 
-    <!-- Bootstrap 
+    <!-- Bootstrap  -->
     <link
     type="text/css"
     rel="stylesheet"
     href="{% static '' %}css/popup_contact.css"
   />
--->
+
   
     <link
       type="text/css"
@@ -90,7 +90,9 @@
 
            
             {% if user.is_authenticated %}
-            
+
+
+            <!-- popup
             <div id="popup" class="popup">
               <div class="popup-content">
                   <span class="close-btn">&times;</span>
@@ -98,7 +100,7 @@
                   <button id="okBtn" class="ok-btn">باشه</button>
                 </div>
               </div>
-
+ -->
             <li class="fa fa-user-o"><a href=""> {{ request.user }} :ایمیل شما</a></li>
             <li>
               <a href="{% url 'aminicar:profile' user_id=request.user.id %}"><i class="fa fa-user-o"></i>پروفایل شما</a>
@@ -196,7 +198,7 @@
       <h5>کل پول: ریال {{ total_price }}</h5>
     </div>
     <div class="cart-btns">
-    <!-- -->  <a href="{%url 'product:checkout'%}">مشاهده سبد خرید</a>
+    <!-- -->  <a href="">مشاهده سبد خرید</a>
       <a href="">پرداخت <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
