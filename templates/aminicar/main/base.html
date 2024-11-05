@@ -74,45 +74,18 @@
             </li>
             <li>
               <a href="#"
-                ><i class="fa fa-envelope-o"></i> smartcar@email.com</a
+                ><i class="fa fa-envelope-o"></i> AminiHyndaiParts@email.com</a
               >
             </li>
             <li>
               <a href="#location"
-                ><i class="fa fa-map-marker"></i>موقعیت تهران</a
+                ><i class="fa fa-map-marker"></i> موقعیت مشهد</a
               >
             </li>
           </ul>
-          <ul class="header-links pull-right">
- 
+       
    
 
-
-           
-            {% if user.is_authenticated %}
-
-
-            <!-- popup
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                  <span class="close-btn">&times;</span>
-                  <p id="popup-message"></p>
-                  <button id="okBtn" class="ok-btn">باشه</button>
-                </div>
-              </div>
- -->
-            <li class="fa fa-user-o"><a href=""> {{ request.user }} :ایمیل شما</a></li>
-            <li>
-              <a href="{% url 'aminicar:profile' user_id=request.user.id %}"><i class="fa fa-user-o"></i>پروفایل شما</a>
-            </li>
-            
-            {% else %}
-            <li class="fa fa-user-o"><a href="">هیچ ایمیلی وارد نشده است</a></li>
-            <li>
-              <a href="{% url 'aminicar:signin' %}"><i class="fa fa-user-o"></i>وارد ایمیل خود شوید</a>
-            </li>
-            {% endif %}
-          </ul>
         </div>
       </div>
       <!-- /TOP HEADER -->
@@ -152,59 +125,9 @@
             <!-- /SEARCH BAR -->
 
             <!-- ACCOUNT -->
-            <div class="col-md-3 clearfix">
+            <div class="col-md-12 clearfix">
               <div class="header-ctn">
-                <!-- Wishlist -->
-                <div>
-                  <a href="#">
-                    <i class="fa fa-heart-o"></i> <span>Your Wishlist</span>
-                    <div class="qty">2</div>
-                  </a>
-                </div>
-                <!-- /Wishlist -->
-
-
-<!-- Cart -->
-<div class="dropdown">
-  <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-    <i class="fa fa-shopping-cart"></i> <span>سبد خرید شما</span>
-    <div class="qty">{{ cart_total }}</div>
-  </a>
-  <div class="cart-dropdown">
-    <div class="cart-list">
-      
-      {% for item in cart_items %}
-      <div class="product-widget">
-        <div class="product-img">
-          <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">
-            <a href="#">{{ item.product.name }}</a>
-          </h3>
-          <h4 class="product-price">
-            <span class="qty">{{ item.quantity }}x</span> ریال {{ item.product.price }}
-          </h4>
-        </div>
-        <button class="delete" data-product-id="{{ item.product.id }}">
-          <i class="fa fa-close"></i>
-        </button>
-      </div>
-      {% endfor %}
-      
-    </div>
-    <div class="cart-summary">
-      <small>تعداد انتخاب شده: {{ cart_total }} </small>
-      <h5>کل پول: ریال {{ total_price }}</h5>
-    </div>
-    <div class="cart-btns">
-    <!-- -->  <a href="">مشاهده سبد خرید</a>
-      <a href="">پرداخت <i class="fa fa-arrow-circle-right"></i></a>
-    </div>
-  </div>
-</div>
-<!-- /Cart -->
-
+           
 
                 <!-- Menu Toogle -->
                 <div class="menu-toggle">
@@ -274,11 +197,13 @@
 					<div class="col-md-4 col-xs-12">
 						<div class="footer">
 							<h3 class="footer-title">ارتباط با پروگرامر</h3>
-							<p>این سایت سعید امینی ساخته است</p>
+							
 							<ul class="footer-links">
 
 								<li><a href="#"><i class="fa fa-map-marker"></i>تهران</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>00989044861768</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>+989044861768</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>واتساپ</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>تلگرام</a></li>
 								<li><a href="#"><i class="fa fa-envelope-o"></i>saeedamini506750@gmail.com</a></li>
 
 							</ul>
@@ -291,10 +216,12 @@
 							<h3 class="footer-title">ارتباط با ما تهران</h3>
 
 							<ul class="footer-links">
-								<li><a href="#"><i class="fa fa-map-marker"></i> تهران</a></li>
+								<li><a href="#"><i class="fa fa-map-marker"></i>بزودی امیرکبیر,خیابان ملت</a></li>
 								<li><a href="#"><i class="fa fa-phone"></i>+989036902400</a></li>
 								<li><a href="#"><i class="fa fa-envelope-o"></i>
-										smartcar@email.com</a></li>
+                تلگرام</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>
+                  واتساپ</a></li>
 
 							</ul>
 						</div>
@@ -304,11 +231,14 @@
 							<h3 class="footer-title">ارتباط با ما مشهد</h3>
 
 							<ul class="footer-links">
-								<li><a href="#"><i class="fa fa-map-marker"></i> مشهد</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>+989036902400</a></li>
+								<li><a href="#"><i class="fa fa-map-marker"></i> خیابان سعدی,سعدی10,پلاک215</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>05132235157</a></li>
 								<li><a href="#"><i class="fa fa-envelope-o"></i>
-										smartcar@email.com</a></li>
-
+										AminiHyndaiParts@email.com</a></li>
+                    <li><a href="#"><i class="fa fa-envelope-o"></i>
+                      AminiHyndai</a></li>
+                      <li><a href="#"><i class="fa fa-envelope-o"></i>
+                        AminiHyndai</a></li>
 							</ul>
 						</div>
 					</div>
