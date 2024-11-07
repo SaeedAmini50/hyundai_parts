@@ -14,6 +14,66 @@ def indexAdmin (requset):
     return render(requset,'aminicar/dashboard/indexAdmin.html')
 
 
+def H213103E100 (requset):
+    return render(requset,'aminicar/product/213103E100/213103E100.html')
+def H230402G510 (requset):
+    return render(requset,'aminicar/product/230402G510/230402G510.html')
+def H231243C101 (requset):
+    return render(requset,'aminicar/product/231243C101/231243C101.html')
+def H231243C201 (requset):
+    return render(requset,'aminicar/product/231243C201/231243C201.html')
+def H231243E020 (requset):
+    return render(requset,'aminicar/product/231243E020/231243E020.html')
+
+def H234102G500 (requset):
+    return render(requset,'aminicar/product/234102G500/234102G500.html')
+
+def H234102G510 (requset):
+    return render(requset,'aminicar/product/234102G510/234102G510.html')
+
+def H263203C250 (requset):
+    return render(requset,'aminicar/product/263203C250/263203C250.html')
+
+def H273012B010 (requset):
+    return render(requset,'aminicar/product/273012B010/273012B010.html')
+
+def H517123L000 (requset):
+    return render(requset,'aminicar/product/517123L000/517123L000.html')
+
+def H584113L000 (requset):
+    return render(requset,'aminicar/product/584113L000/584113L000.html')
+
+
+def H1884111051 (requset):
+    return render(requset,'aminicar/product/1884111051/1884111051.html')
+
+def H230402B050 (requset):
+    return render(requset,'aminicar/product/230402B050/230402B050.html')
+
+
+def H1884511160 (requset):
+    return render(requset,'aminicar/product/1884511160/1884511160.html')
+
+
+def H1884511160_1 (requset):
+    return render(requset,'aminicar/product/1884511160(1)/1884511160(1).html')
+
+
+def H1884911070 (requset):
+    return render(requset,'aminicar/product/1884911070/1884911070.html')
+
+def H2231125212 (requset):
+    return render(requset,'aminicar/product/2231125212/2231125212.html')
+
+def H2351025250 (requset):
+    return render(requset,'aminicar/product/2351025250/2351025250.html')
+
+def H2741023700 (requset):
+    return render(requset,'aminicar/product/2741023700/2741023700.html')
+
+
+def H5172038110 (requset):
+    return render(requset,'aminicar/product/5172038110/5172038110.html')
 
 
 def H2630035505 (requset):
