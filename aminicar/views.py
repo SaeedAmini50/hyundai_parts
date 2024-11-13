@@ -56,7 +56,7 @@ def H1884511160 (requset):
 
 
 def H1884511160_1 (requset):
-    return render(requset,'aminicar/product/1884511160(1)/1884511160(1).html')
+    return render(requset,'aminicar/product/1884511160_1/1884511160_1.html')
 
 
 def H1884911070 (requset):
