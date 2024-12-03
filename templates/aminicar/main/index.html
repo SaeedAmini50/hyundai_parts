@@ -190,8 +190,10 @@
 											</div>
 											<div class="add-to-cart">
                        
-												<button class="add-to-cart-btn"><i class="fa fa-eye"></i> show product</button>
-											</div>
+												<button class="add-to-cart-btn" onclick="location.href='{% url 'product:product_detail' product.id %}'">
+													<i class="fa fa-eye"></i> show product
+												</button>
+												</div>
 										</div>
 										<!-- /product -->
 
