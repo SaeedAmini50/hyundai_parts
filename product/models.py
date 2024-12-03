@@ -24,10 +24,10 @@ class Product(models.Model):
     toman = 708000
     title = models.CharField(max_length=150, unique=True) 
     slug = models.SlugField(max_length=200, unique=True)
+    name= models.CharField(max_length=200, null=True) 
     description = models.TextField(blank=True, null=True)
     port = models.CharField(max_length=150, null=False, unique=True)
     price = models.FloatField(blank=True, null=True)
-    discount = models.FloatField(blank=True, null=True)
     quantity = models.IntegerField(null=False, blank=False)
     mark = models.CharField(max_length=150, null=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
