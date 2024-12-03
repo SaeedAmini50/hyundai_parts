@@ -30,6 +30,12 @@ class Product(models.Model):
     mark=models.CharField(max_length=150, null=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image1 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image2 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image3 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image4 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+
+
 
 
     def __str__(self):
