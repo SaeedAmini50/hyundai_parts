@@ -121,7 +121,8 @@ def register_signup(request, *args, **kwargs):
             return redirect("aminicar:index")
         else:
             context['registration_form'] = form
-            print(form.errors) 
+            print(form.errors.as_text())
+
 
     else:
         form = RegistrationForm()
