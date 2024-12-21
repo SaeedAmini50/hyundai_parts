@@ -53,12 +53,16 @@ def index (requset):
     return render(requset,'aminicar/main/index.html', {'name':'saeedamini'})
 
 
+
+
+
 def base (requset):
+    
     return render(requset,'aminicar/main/index_base.html')
 
 def show_product(request):
     # ارسال پیام موفقیت به درخواست
-    messages.success(request, 'خوش آمدید!')
+    
     
     # رندر کردن صفحه HTML
     return render(request, 'aminicar/main/show_product.html')

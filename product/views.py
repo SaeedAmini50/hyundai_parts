@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect
 from .models import Product ,Cart
 from django.http import JsonResponse
 import json
- 
+from django.contrib import messages 
+
 def view_product(request):
     context = {}
     products = Product.objects.all()
 
     context['products'] = products
-
+    messages.success(request, "نتد")
     return render(request, 'aminicar/main/index.html', context)
 
 

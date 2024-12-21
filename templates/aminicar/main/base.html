@@ -88,19 +88,23 @@
    
 
 
-           
-            {% if user.is_authenticated %}
-
-
-            <!-- popup
-            <div id="popup" class="popup">
-              <div class="popup-content">
-                  <span class="close-btn">&times;</span>
-                  <p id="popup-message"></p>
-                  <button id="okBtn" class="ok-btn">باشه</button>
+            {% if messages %}
+            <div id="popup" class="popup" style="display: flex;">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+                    <p id="popup-message">
+                        {% for msg in messages %}
+                            {{ msg }}
+                        {% endfor %}
+                    </p>
+                    <button id="okBtn" class="ok-btn" onclick="document.getElementById('popup').style.display='none'">باشه</button>
                 </div>
-              </div>
- -->
+            </div>
+            {% endif %}
+            
+           
+              {% if user.is_authenticated %}
+ 
             <li class="fa fa-user-o"><a href=""> {{ request.user }} :ایمیل شما</a></li>
             <li>
               <a href="{% url 'aminicar:profile' user_id=request.user.id %}"><i class="fa fa-user-o"></i>پروفایل شما</a>
@@ -138,7 +142,7 @@
               <div class="header-search">
                 <form>
                   <select class="input-select">
-                    <option value="0"><a href="/">همه محصولات</a></option>
+                    <option value="0"><a href="/"></a></option>
                     <option value="1"><a href="storeTV.html">فیلتر</a></option>
                     <option value="2">
                       <a href="storemachin.html">شمع</a>
@@ -232,7 +236,6 @@
           <!-- NAV -->
           <ul class="main-nav nav navbar-nav">
             <li> <a href="{%url 'product:products'%}">صفحه اصلی</a></li>
-
             <li><a href="{%url 'aminicar:H3C10028164'%}">H3C10028164</a></li>
             <li><a href="{%url 'aminicar:H273012B010'%}">H273012B010</a></li>
             <li><a href="{%url 'aminicar:H311121R000'%}">H311121R000</a></li>
