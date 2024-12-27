@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import handler404
 from aminicar.views import (index,
 show_product,
 register_signin,
@@ -42,3 +43,5 @@ urlpatterns = [
             path('<user_id>/profile/', edit_account_view , name='profile')
 
 ]
+
+handler404 = 'aminicar.views.not_find'

@@ -11,6 +11,15 @@
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="icon">
 
+
+    <!-- Bootstrap  -->
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="{% static '' %}css/popup_contact.css"
+  />
+
+
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +73,20 @@
         </div>
       </div>
 
+
+      {% if messages %}
+      <div id="popup" class="popup" style="display: flex;">
+          <div class="popup-content">
+              <span class="close-btn" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+              <p id="popup-message">
+                  {% for msg in messages %}
+                      {{ msg }}
+                  {% endfor %}
+              </p>
+              <button id="okBtn" class="ok-btn" onclick="document.getElementById('popup').style.display='none'">باشه</button>
+          </div>
+      </div>
+      {% endif %}
 
 
       {% block content %}
