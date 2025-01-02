@@ -166,8 +166,6 @@
     {% if products %}
     {% for product in products %}
    
- 
-
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
@@ -189,7 +187,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-                       
+                        <input type="hidden" class="prodt_id" value="{{ product.id }}">
 												<button class="add-to-cart-btn" onclick="location.href='{% url 'product:product_detail' product.id %}'">
 													<i class="fa fa-eye"></i> show product
 												</button>
@@ -225,7 +223,7 @@
 <!-- NEWSLETTER -->
 
 	<!-- SECTION -->
-	<div class="section">
+<div class="section">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
