@@ -6,9 +6,7 @@ import json
 def view_product(request):
     context = {}
     products = Product.objects.all()
-
     context['products'] = products
-
     return render(request, 'aminicar/main/index.html', context)
 
 

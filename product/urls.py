@@ -10,6 +10,4 @@ urlpatterns = [
     path('checkout/', checkout , name='checkout'),
 ]
  
-
-
  
