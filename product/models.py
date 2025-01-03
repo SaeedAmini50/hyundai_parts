@@ -21,7 +21,7 @@ def get_default_product_image():
 
 
 class Product(models.Model):
-    toman = 708000
+    toman = 800000
     title = models.CharField(max_length=150, unique=True) 
     slug = models.SlugField(max_length=200, unique=True)
     name= models.CharField(max_length=200, null=True) 
