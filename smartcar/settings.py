@@ -14,13 +14,12 @@ print(BASE_DIR)
 SECRET_KEY = 'django-insecure-fw(h8b^u^u+dy3%5$xkph#1(f74(4_0ql2^_&e^8yb6_l&e94x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -35,7 +34,7 @@ INSTALLED_APPS = [
     # my apps
     'aminicar',
     'product'
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -64,6 +63,10 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
+
 
 WSGI_APPLICATION = 'smartcar.wsgi.application'
 AUTH_USER_MODEL ='aminicar.Account'
@@ -129,3 +132,6 @@ STATICFILES_DIRS=[
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATA_UPLOAD_MAX_MEMORY_SIZE =5242880
+
+DEFAULT_CHARSET = 'utf-8'
+FILE_CHARSET = 'utf-8'

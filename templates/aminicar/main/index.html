@@ -166,20 +166,18 @@
     {% if products %}
     {% for product in products %}
    
- 
-
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
 												<img src="{{product.image.url}}" alt="">
 												<div class="product-label">
-													<span class="sale">-30%</span>
+													<span class="sale">-5%</span>
 												</div>
 											</div>
 											<div class="product-body">
 												<p class="product-category">{{product.mark}}</p>
-												<h3 class="product-name"><a href="#">{{product.port}} part number</a></h3>
-												<h4 class="product-price">{{product.price}}<del class="product-old-price">$990.00</del></h4>
+												<h3 class="product-name"><a href="#">پورت نمبر <br>{{product.port}}<br>{{product.name}}  </a></h3>
+												<h4 class="product-price">ریال{{product.show_price}}<del class="product-old-price">{{product.discounted_price}}</del></h4>
 												<div class="product-rating">
 												</div>
 												<div class="product-btns">
@@ -189,9 +187,17 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
+<<<<<<< HEAD
                            <input type="hidden" class="prodt_id" value="{{ product.id }}">
 												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
 											</div>
+=======
+                        <input type="hidden" class="prodt_id" value="{{ product.id }}">
+												<button class="add-to-cart-btn" onclick="location.href='{% url 'product:product_detail' product.id %}'">
+													<i class="fa fa-eye"></i> show product
+												</button>
+												</div>
+>>>>>>> origin/test_for_product_image_database
 										</div>
 										<!-- /product -->
 
@@ -223,7 +229,7 @@
 <!-- NEWSLETTER -->
 
 	<!-- SECTION -->
-	<div class="section">
+<div class="section">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->

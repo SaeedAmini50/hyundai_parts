@@ -21,15 +21,34 @@ def get_default_product_image():
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=150,unique=True) 
+    toman = 708000
+    title = models.CharField(max_length=150, unique=True) 
     slug = models.SlugField(max_length=200, unique=True)
+    name= models.CharField(max_length=200, null=True) 
     description = models.TextField(blank=True, null=True)
-    port=models.CharField(max_length=150, null=False,unique=True)
+    port = models.CharField(max_length=150, null=False, unique=True)
     price = models.FloatField(blank=True, null=True)
     quantity = models.IntegerField(null=False, blank=False)
-    mark=models.CharField(max_length=150, null=False)
+    mark = models.CharField(max_length=150, null=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image1 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image2 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image3 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+    image4 = models.ImageField(upload_to=get_product_image_filepath, default=get_default_product_image, blank=True, null=True)
+
+    @property
+    def show_price(self):
+        total_price = self.price * self.toman
+        rounded_price = round(total_price, -len(str(int(total_price))) + 3)  # رُند کردن به 5 رقم اول
+        return f"{int(rounded_price):,}"  # فرمت عدد با کاما
+
+    @property
+    def discounted_price(self):
+        base_price = self.price * self.toman  # محاسبه قیمت پایه
+        rounded_price = round(base_price, -len(str(int(base_price))) + 2)  # رُند کردن به 5 رقم اول
+        increased_price = rounded_price * 1.05  # افزودن 5 درصد
+        return f"{int(increased_price):,}"  # فرمت عدد با کاما
 
 
     def __str__(self):
