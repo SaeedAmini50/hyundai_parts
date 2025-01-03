@@ -79,7 +79,7 @@
 								<div><strong>اسم و مارک</strong></div>
 								<div><strong > قیمت</strong></div>
 							</div>
-							
+					{% csrf_token %}
 							{% for item in cart_items %}
 							<div class="order-products">
 								<div class="order-col">
