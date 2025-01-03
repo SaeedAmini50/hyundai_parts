@@ -17,6 +17,7 @@ $('.add-to-cart-btn').click(function (e) {
         },
         success: function (response) {
             console.log("Response:", response);
+            location.reload();
             if (response.status === "Product added successfully!") {
                 alertify.success(response.status);
             } else {
