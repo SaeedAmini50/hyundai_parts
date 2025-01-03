@@ -176,7 +176,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">{{product.mark}}</p>
-												<h3 class="product-name"><a href="#">پورت نمبر <br>{{product.port}}<br>{{product.name}}  </a></h3>
+												<h3 class="product-name"><a href="{%url 'product:product_detail' product_id=product.id%}">پورت نمبر <br>{{product.port}}<br>{{product.name}}  </a></h3>
 												<h4 class="product-price">ریال{{product.show_price}}<del class="product-old-price">{{product.discounted_price}}</del></h4>
 												<div class="product-rating">
 												</div>

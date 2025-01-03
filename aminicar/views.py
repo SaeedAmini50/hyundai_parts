@@ -115,7 +115,7 @@ def register_signup(request, *args, **kwargs):
     # بررسی اینکه آیا کاربر قبلاً وارد شده است
     if user.is_authenticated:
         messages.info(request, f'شما قبلاً با ایمیل {user.email} وارد شده‌اید.')
-        return redirect("aminicar:index")
+        return redirect("product:products")
 
     context = {}
     if request.method == 'POST':
@@ -133,7 +133,7 @@ def register_signup(request, *args, **kwargs):
                 destination = kwargs.get("next")
                 if destination:
                     return redirect(destination)
-                return redirect("aminicar:index")
+                return redirect("product:products")
         else:
             # نمایش پیام خطاهای فرم
             context['registration_form'] = form
@@ -152,7 +152,7 @@ def register_signup(request, *args, **kwargs):
     return render(request, 'aminicar/form/signup.html', context)
 def logout_view(request):
     logout(request)
-    return redirect('aminicar:index')
+    return redirect('product:products')
 
 
 

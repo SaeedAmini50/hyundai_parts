@@ -95,6 +95,7 @@ class Order(models.Model):
     date_order = models.DateTimeField(auto_now_add=True)
     tracking_code = models.CharField(max_length=200, null=True, blank=True)
 
+
     def __str__(self):
         return self.user.username
 
