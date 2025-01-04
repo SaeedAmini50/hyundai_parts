@@ -61,14 +61,14 @@ def add_to_cart(request):
 def checkout(request):
     if not request.user.is_authenticated:
         messages.error(request, 'لطفاً ابتدا وارد حساب کاربری خود شوید.')
-        return redirect('login')  # یا صفحه‌ای که کاربر را به ورود هدایت کند
+    
 
     context = {}
     cart_items = Cart.objects.filter(user=request.user)
 
     if not cart_items.exists():
         messages.warning(request, 'سبد خرید شما خالی است. لطفاً محصولی به سبد خرید اضافه کنید.')
-        return redirect('cart')  # یا هر صفحه‌ای که محصولات را نمایش می‌دهد
+    
 
     context['cart_items'] = cart_items
     context['cart_total'] = cart_items.count()
@@ -83,3 +83,4 @@ def checkout(request):
     messages.info(request, 'لطفاً جزئیات پرداخت خود را بررسی کنید.')
 
     return render(request, 'aminicar/main/checkout.html', context)
+

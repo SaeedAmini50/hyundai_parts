@@ -177,6 +177,8 @@
   <div class="cart-dropdown">
     <div class="cart-list">
       
+
+      
       {% for item in cart_items %}
       <div class="product-widget">
         <div class="product-img">
@@ -184,7 +186,7 @@
         </div>
         <div class="product-body">
           <h3 class="product-name">
-            <a href="#">{{ item.product.name }}</a>
+            <a href="#">{{ item.product.title }}</a>
           </h3>
           <h4 class="product-price">
             <span class="qty">{{ item.quantity }}x</span> ریال {{ item.product.price }}
@@ -201,9 +203,16 @@
       <small>تعداد انتخاب شده: {{ cart_total }} </small>
       <h5>کل پول: ریال {{ total_price }}</h5>
     </div>
+    {% if user.is_authenticated %}
     <div class="cart-btns">
     <!-- -->  <a href="{%url 'product:checkout'%}">مشاهده سبد خرید</a>
       <a href="">پرداخت <i class="fa fa-arrow-circle-right"></i></a>
+
+      {%else%}
+      <div class="cart-btns">
+        <!-- -->  <a href="">مشاهده سبد خرید</a>
+          <a href="">پرداخت <i class="fa fa-arrow-circle-right"></i></a>
+{%endif%}    
     </div>
   </div>
 </div>
