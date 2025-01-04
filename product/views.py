@@ -79,6 +79,7 @@ def checkout(request):
 
     context['total_price'] = total_price
 
+
     messages.info(request, 'لطفاً جزئیات پرداخت خود را بررسی کنید.')
 
     return render(request, 'aminicar/main/checkout.html', context)

@@ -70,6 +70,7 @@ class Product(models.Model):
 
 class Order(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE, null=True)
+    payment = models.ForeignKey('Payment', on_delete=models.SET_NULL, blank=True, null=True)
     total_price = models.FloatField(blank=True, null=True)
     date_order = models.DateTimeField(auto_now_add=True)
     tracking_code = models.CharField(max_length=200, null=True, blank=True)
@@ -119,3 +120,14 @@ class Cart(models.Model):
     def __str__(self):
         return self.product.title
 
+
+class Payment(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    payment_number = models.CharField(max_length=100)
+    payment_method = models.CharField(max_length=100)
+    amount_paid = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.payment_number
