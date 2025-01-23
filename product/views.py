@@ -72,15 +72,36 @@ def checkout(request):
 
     context['cart_items'] = cart_items
     context['cart_total'] = cart_items.count()
-
+    cart_total=0
     total_price = 0
     for item in cart_items:
         total_price += item.product.price * item.quantity  # جمع کل قیمت محصولات با تعداد
-
+        cart_total +=item.quantity
     context['total_price'] = total_price
-
+    context['cart_total'] = cart_total
 
     messages.info(request, 'لطفاً جزئیات پرداخت خود را بررسی کنید.')
 
     return render(request, 'aminicar/main/checkout.html', context)
 
+
+def update_cart(requset):
+    data = json.loads(requset.body)
+    prod_id = data['productId']
+    action = data['action']
+    return JsonResponse({'status':"ok"})
+    cart_item = Cart.objects.filter(user=requset.user, product_id=prod_id)[0]
+
+
+    if cart_item:
+        if action == 'add':
+            cart_item.quantity += 1
+    
+        elif action == 'remove':
+            cart_item.quantity -= 1
+
+        cart_item.save()
+
+    
+    return JsonResponse({'status':"Update Successfully"})
+    

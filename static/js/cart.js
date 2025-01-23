@@ -1,3 +1,5 @@
+
+
 $('.add-to-cart-btn').click(function (e) {
     e.preventDefault();
     console.log("Button Clicked");
@@ -29,3 +31,45 @@ $('.add-to-cart-btn').click(function (e) {
         }
     });
 });
+
+
+
+let updateBtns = document.getElementsByClassName('update_cart')
+let token = $('input[name=csrfmiddlewaretoken]').val();
+
+for (i = 0; i < updateBtns.length; i++) {
+   updateBtns[i].addEventListener('click', function(){
+      let productId = this.dataset.product
+      let action = this.dataset.action
+      console.log('productId', productId, 'action', action)
+	  console.log("ok")
+      updateQuantity(productId, action);
+   })
+}
+
+function updateQuantity(productId, action){
+
+   let url = '/update_cart/'
+
+   fetch(url, {
+      method: "POST",
+      headers: {
+         'Content-Type': 'application/json',
+         'X-CSRFToken': token,
+      },
+      body:JSON.stringify({'productId':productId, 'action': action})
+   })
+
+   .then((response) => {
+      
+      return response.json();
+      
+   })
+
+   .then((data) => {
+      console.log('data:', data);
+      
+ 	  location.reload();
+      
+})  
+}

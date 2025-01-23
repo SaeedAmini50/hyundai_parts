@@ -45,6 +45,10 @@
       href="{% static '' %}css/nouislider.min.css"
     />
 
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+
+
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="{% static '' %}css/font-awesome.min.css" />
 
@@ -187,12 +191,39 @@
         {% for item in cart_items %}
         <div class="product-body">
           <h3 class="product-name">
-
             <a href="#">{{ item.product.title }}</a>
           </h3>
           <h4 class="product-price">
-            <span class="qty">{{ item.quantity }}x</span> ریال {{ item.product.price}}
+      ریال {{ item.product.price}}x
+
+     
+     
+
+   <input type='hidden' class='prod_id' value="{{ item.product.id }}">
+   {% csrf_token %}
+
+   {% if item.product.quantity >= item.quantity %}
+   <div class="col-md-4 quantity">
+       
+       <label for="quantity">Quantity:{{ item.quantity }}</label>
+
+       <div class="input-group text-center mb-3">
+
+           <button class="input-group-text changeQuantity update_cart" data-action="remove" data-product="{{ item.product.id }}">-</button>
+       
+           <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ item.quantity }}">
+
+           <button class="input-group-text changeQuantity update_cart" data-action="add" data-product="{{ item.product.id }}">+</button>
+       </div>
+
+       {% else %}
+           <h6>Out of Stock</h6>
+       {% endif %}
+
+
+      
           </h4>
+          <br>
         </div>
         {% endfor %}
         <button data-product-id="{{ item.product.id }}">
