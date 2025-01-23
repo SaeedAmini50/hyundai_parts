@@ -84,24 +84,31 @@ def checkout(request):
 
     return render(request, 'aminicar/main/checkout.html', context)
 
+import logging
+logger = logging.getLogger(__name__)
 
-def update_cart(requset):
-    data = json.loads(requset.body)
-    prod_id = data['productId']
-    action = data['action']
-    return JsonResponse({'status':"ok"})
-    cart_item = Cart.objects.filter(user=requset.user, product_id=prod_id)[0]
+def update_cart(request):
+    try:
+        data = json.loads(request.body)
+        prod_id = data.get('productId')
+        action = data.get('action')
+        logger.info(f"Product ID: {prod_id}, Action: {action}")
 
-
-    if cart_item:
+        cart_item = Cart.objects.get(user=request.user, product_id=prod_id)
         if action == 'add':
             cart_item.quantity += 1
-    
         elif action == 'remove':
             cart_item.quantity -= 1
-
+        logger.info(f"Quantity after update: {cart_item.quantity}")
         cart_item.save()
 
-    
-    return JsonResponse({'status':"Update Successfully"})
-    
+        if cart_item.quantity == 0:
+            cart_item.delete()
+            logger.info(f"Cart item deleted: {prod_id}")
+        return JsonResponse({'status': "Update Successfully"})
+    except Cart.DoesNotExist:
+        logger.error(f"Cart item not found for Product ID: {prod_id}")
+        return JsonResponse({'status': "Product not found in cart"}, status=404)
+    except Exception as e:
+        logger.error(f"Error updating cart: {e}")
+        return JsonResponse({'status': "Error occurred"}, status=500)
