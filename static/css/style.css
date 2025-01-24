@@ -166,7 +166,7 @@ textarea.input {
 }
 
 .input-number input[type="number"] {
-  -moz-appearance: textfield;
+-moz-appearance: textfield;
   height: 40px;
   width: 100%;
   border: 1px solid #E4E7ED;
@@ -646,6 +646,14 @@ textarea.input {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+
+
+
+
+
+
+
 
 /*=========================================================
 	03 -> Navigation
@@ -2202,43 +2210,72 @@ overflow:auto;
 	13 -> buttan quantity
 ===========================================================*/
 
-
-
-
-
-
-
-.quantity-container {
+/* استایل کلی برای input-group */
+.input-group {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px; /* فاصله بین دکمه‌ها و ورودی عددی */
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
 }
 
-.quantity-btn {
+.input-group-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 50%; /* دکمه‌های دایره‌ای */
-  font-size: 18px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.quantity-btn:hover {
-  background-color: #0056b3;
+.input-group-text:hover {
+  background-color: #e2e6ea;
 }
 
-.quantity-input {
-  width: 60px;
-  height: 40px;
+.input-group .form-control {
   text-align: center;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 0;
+  margin: 0;
+  height: 40px;
+}
+
+/* استایل input فقط برای نمایش (غیرقابل ویرایش) */
+.input-group .form-control.display-only {
+  pointer-events: none;
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+/* استایل رسپانسیو */
+@media (max-width: 576px) {
+  .input-group {
+    max-width: 200px;
+  }
+
+  .input-group-text {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .input-group .form-control {
+    font-size: 14px;
+    height: 30px;
+  }
+}
+
+
+
+
+
+.red-line {
+  border: 0 ;
+  height: 2px ;
+  background-color: red ;
+  margin: 20px 0 ;
 }

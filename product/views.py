@@ -4,8 +4,10 @@ from django.http import JsonResponse
 import json
 from django.contrib import messages 
 from django.shortcuts import get_object_or_404
+import logging
 
 
+logger = logging.getLogger(__name__)
 
 def view_product(request):
     context = {}
@@ -25,6 +27,7 @@ def product_detail(request, product_id):
     return render(request, 'aminicar/main/show_product.html', context)
 
 def add_to_cart(request):
+    
     current_user = request.user
     if request.method == "POST":
         if request.user.is_authenticated:
@@ -84,8 +87,9 @@ def checkout(request):
 
     return render(request, 'aminicar/main/checkout.html', context)
 
-import logging
-logger = logging.getLogger(__name__)
+
+
+
 
 def update_cart(request):
     try:

@@ -1,5 +1,3 @@
-
-
 $('.add-to-cart-btn').click(function (e) {
     e.preventDefault();
     console.log("Button Clicked");
@@ -32,10 +30,11 @@ $('.add-to-cart-btn').click(function (e) {
     });
 });
 
+// قبل از این که متغیر updateBtns دوباره تعریف شود، بررسی کنید
+if (typeof updateBtns === 'undefined') {
+    let updateBtns = document.querySelectorAll('.update_cart');
 
 
-let updateBtns = document.getElementsByClassName('update_cart')
-let token = $('input[name=csrfmiddlewaretoken]').val();
 
 for (i = 0; i < updateBtns.length; i++) {
    updateBtns[i].addEventListener('click', function(){
@@ -46,8 +45,10 @@ for (i = 0; i < updateBtns.length; i++) {
       updateQuantity(productId, action);
    })
 }
-
+}
 function updateQuantity(productId, action){
+
+    let token = $('input[name=csrfmiddlewaretoken]').val();
 
    let url = '/update_cart/'
 
@@ -72,4 +73,5 @@ function updateQuantity(productId, action){
  	  location.reload();
       
 })  
+
 }
