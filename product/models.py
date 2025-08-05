@@ -1,7 +1,7 @@
 from django.db import models
 from aminicar.models import Account
 
-
+from decimal import Decimal
 
 class Category(models.Model):
     title = models.CharField(max_length=100,null=False)
@@ -21,7 +21,7 @@ def get_default_product_image():
 
 
 class Product(models.Model):
-    toman = 800000
+   
     title = models.CharField(max_length=150, unique=True) 
     slug = models.SlugField(max_length=200, unique=True)
     name= models.CharField(max_length=200, null=True) 
@@ -39,17 +39,14 @@ class Product(models.Model):
 
     @property
     def show_price(self):
-        total_price = self.price * self.toman
-        rounded_price = round(total_price, -len(str(int(total_price))) + 3)  # رُند کردن به 5 رقم اول
-        return f"{int(rounded_price):,}"  # فرمت عدد با کاما
+        # نمایش دقیق همان عدد با کاما
+        return f"{int(self.price):,}"
 
     @property
     def discounted_price(self):
-        base_price = self.price * self.toman  # محاسبه قیمت پایه
-        rounded_price = round(base_price, -len(str(int(base_price))) + 2)  # رُند کردن به 5 رقم اول
-        increased_price = rounded_price * 1.05  # افزودن 5 درصد
-        return f"{int(increased_price):,}"  # فرمت عدد با کاما
-
+        # افزودن ۵٪ بدون رُند پیچیده
+        result = Decimal(self.price) * Decimal('1.05')
+        return f"{int(round(result, 0)):,}"
 
     def __str__(self):
         return self.title
