@@ -35,24 +35,24 @@ def add_to_cart(request):
             try:
                 product_check = Product.objects.get(id=product_id)
             except Product.DoesNotExist:
-                messages.error(request, 'محصولی با این شناسه یافت نشد. لطفاً دوباره تلاش کنید.')
+                messages.error(request, 'No product was found with this identifier. Please try again.')
                 return JsonResponse({'status': 'No such Product found'})
 
             if product_check:
                 if Cart.objects.filter(user=current_user, product_id=product_id):
-                    messages.warning(request, 'این محصول قبلاً به سبد خرید شما اضافه شده است.')
+                    messages.warning(request, 'This product has already been added to your basket.')
                     return JsonResponse({'status': 'Product is Already in Cart'})
                 else:
                     product_qyt = 1
                     Cart.objects.create(user=current_user, product_id=product_id, quantity=product_qyt)
-                    messages.success(request, 'محصول با موفقیت به سبد خرید شما اضافه شد.')
+                    messages.success(request, 'The product has been successfully added to your basket.')
                     return JsonResponse({'status': 'Product added successfully'})
 
         else:
-            messages.error(request, 'لطفاً ابتدا وارد حساب کاربری خود شوید.')
+            messages.error(request, 'Please sign in to your account first.')
             return JsonResponse({'status': 'Login to continue'})
 
-    messages.error(request, 'درخواست نادرست است. لطفاً دوباره تلاش کنید.')
+    messages.error(request, 'Invalid request. Please try again.')
     return JsonResponse({'status': 'Invalid request'}, status=400)
 
 
@@ -60,14 +60,14 @@ def add_to_cart(request):
 
 def checkout(request):
     if not request.user.is_authenticated:
-        messages.error(request, 'لطفاً ابتدا وارد حساب کاربری خود شوید.')
+        messages.error(request, 'Please sign in to your account first.')
         return redirect('login')  # یا صفحه‌ای که کاربر را به ورود هدایت کند
 
     context = {}
     cart_items = Cart.objects.filter(user=request.user)
 
     if not cart_items.exists():
-        messages.warning(request, 'سبد خرید شما خالی است. لطفاً محصولی به سبد خرید اضافه کنید.')
+        messages.warning(request, 'Your basket is empty. Please add a product to your basket.')
         return redirect('cart')  # یا هر صفحه‌ای که محصولات را نمایش می‌دهد
 
     context['cart_items'] = cart_items
@@ -79,6 +79,6 @@ def checkout(request):
 
     context['total_price'] = total_price
 
-    messages.info(request, 'لطفاً جزئیات پرداخت خود را بررسی کنید.')
+    messages.info(request, 'Please review your payment details.')
 
     return render(request, 'aminicar/main/checkout.html', context)

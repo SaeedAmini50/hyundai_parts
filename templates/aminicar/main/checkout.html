@@ -32,24 +32,27 @@
 						<!-- Billing Details -->
 						<div class="billing-details">
 							<div class="section-title">
-								<h3 class="title">آدرس تحویل محصول</h3>
+								<h3 class="title">Delivery Address</h3>
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="شهر">
+								<input class="input" type="text" name="city" placeholder="city">
 							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="آدرس">
-							</div>
-		
-							<div class="form-group">
-								<input class="input" type="text" name="post-code" placeholder="کد پستی">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="شماره تلفن">
-							</div>
-							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder=" ایمیل">
-							</div>
+							<div class="form-group"><div class="form-group">
+  <input class="input" type="text" name="address" placeholder="Delivery Address">
+</div>
+
+<div class="form-group">
+  <input class="input" type="text" name="post-code" placeholder="Postal Code">
+</div>
+
+<div class="form-group">
+  <input class="input" type="tel" name="tel" placeholder="Phone Number">
+
+
+<div class="form-group">
+  <input class="input" type="email" name="email" placeholder="Email Address">
+</div>
+
 							<div class="form-group">
 								<div class="input-checkbox">
 									<div class="caption">
@@ -63,7 +66,7 @@
 
 						<!-- Order notes -->
 						<div class="order-notes">
-							<textarea class="input" placeholder="معلومات اضافی"></textarea>
+							<textarea class="input" placeholder=" Additional Information "></textarea>
 						</div>
 						<!-- /Order notes -->
 					</div>
@@ -71,13 +74,16 @@
 					<!-- Order Details -->
 					<div class="col-md-5 order-details">
 						<div class="section-title text-center">
-							<h3 class="title">درخواست های شما {{ cart_total }} هستند </h3>
+						<h3 class="title">Your total requests amount to {{ cart_total }}</h3>
 						</div>
 						<div class="order-summary">
 							<div class="order-col">
-								<div><strong>شماره پارت</strong></div>
-								<div><strong>اسم و مارک</strong></div>
-								<div><strong > قیمت</strong></div>
+								
+								
+								<div><strong>Part Number</strong></div>
+<div><strong>Name & Brand</strong></div>
+<div><strong>Price</strong></div>
+
 							</div>
 					{% csrf_token %}
 							{% for item in cart_items %}
@@ -93,11 +99,13 @@
 							{%endfor%}
 							
 							<div class="order-col">
-								<div>انتقال محصولات </div>
-								<div><strong>رایگان</strong></div>
+						<div>Product Delivery</div>
+<div><strong>Free of Charge</strong></div>
+
 							</div>
 							<div class="order-col">
-								<div><strong>مجموعه قیمت </strong></div>
+								<div><strong>Price List</strong></div>
+
 								<div><strong class="order-total">{{total_price}}</strong></div>
 							</div>
 						</div>
@@ -106,10 +114,10 @@
 								<input type="radio" name="payment" id="payment-1">
 								<label for="payment-1">
 									<span></span>
-									از طریق بانک
+									Payment Method: Bank Transfer
 								</label>
 								<div class="caption">
-									<p>محصول شما بعد دو روز به دست شما میرسد</p>
+									<p>Your product will arrive in two days.</p>
 								</div>
 							</div>
 			
@@ -117,10 +125,11 @@
 								<input type="radio" name="payment" id="payment-3">
 								<label for="payment-3">
 									<span></span>
-									پول نقد
+								Pay with Cash
 								</label>
 								<div class="caption">
-									<p>بعد ۴ ساعت به دست شما میرسد</p>
+									<p>Your item will arrive in 4 hours.</p>
+
 								</div>
 							</div>
 						</div>
@@ -128,7 +137,8 @@
 							<input type="checkbox" id="terms">
 							<label for="terms">
 								<span></span>
-								من موافقم با  <a href="#">قوانین</a>
+								<p>I agree to the <a href="#">terms and conditions</a>.</p>
+
 							</label>
 						</div>
 						<a href="#" class="primary-btn order-submit">Place order</a>

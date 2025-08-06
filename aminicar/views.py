@@ -82,7 +82,7 @@ def register_signin(request):
 
     # بررسی اینکه آیا کاربر قبلاً وارد شده است
     if user.is_authenticated:
-        messages.info(request, 'شما قبلاً وارد حساب کاربری خود شده‌اید.')
+        messages.info(request, 'You are already signed in to your account.')
         return redirect('aminicar:index')
 
     if request.method == 'POST':
@@ -95,16 +95,16 @@ def register_signin(request):
             user = authenticate(email=email, password=raw_password)
             if user:
                 login(request, user)
-                messages.success(request, 'خوش آمدید! شما با موفقیت وارد شدید.')
+                messages.success(request, 'Welcome! You have signed in successfully.')
                 return redirect('aminicar:index')
             else:
-                messages.error(request, 'ایمیل یا رمز عبور اشتباه است. لطفاً دوباره تلاش کنید.')
+                messages.error(request, 'Incorrect email or password. Please try again.')
         else:
-            messages.error(request, 'لطفاً فرم را به‌درستی تکمیل کنید.')
+            messages.error(request, 'Please complete the form correctly.')
     else:
         form = AccountAuthenticationForm()
         # نمایش پیام راهنما برای تکمیل فرم
-        messages.info(request, 'لطفاً اطلاعات خود را وارد کنید.')
+        messages.info(request, 'Please enter your information.')
 
     context['login_form'] = form
     return render(request, 'aminicar/form/signin.html', context)
@@ -114,7 +114,7 @@ def register_signup(request, *args, **kwargs):
 
     # بررسی اینکه آیا کاربر قبلاً وارد شده است
     if user.is_authenticated:
-        messages.info(request, f'شما قبلاً با ایمیل {user.email} وارد شده‌اید.')
+        messages.info(request, f'You are already signed in with the email address {user.email}.')
         return redirect("product:products")
 
     context = {}
@@ -129,7 +129,7 @@ def register_signup(request, *args, **kwargs):
             account = authenticate(email=email, password=raw_password)
             if account:
                 login(request, account)
-                messages.success(request, 'ثبت‌نام با موفقیت انجام شد. خوش آمدید!')
+                messages.success(request, 'You have successfully registered. Welcome!')
                 destination = kwargs.get("next")
                 if destination:
                     return redirect(destination)
@@ -139,13 +139,13 @@ def register_signup(request, *args, **kwargs):
             context['registration_form'] = form
             error_messages = form.errors.as_text()
             print(error_messages)
-            messages.error(request, 'ثبت‌نام ناموفق بود. لطفاً خطاهای فرم را بررسی کنید پسورد باید بیش از ۸ کارکتر و شبیه جیمیل نباشد .')
+            messages.error(request, 'Registration failed. Please check the form for errors. The password must be longer than 8 characters and should not resemble a Gmail address.')
 
     else:
         form = RegistrationForm()
         context['registration_form'] = form
         # پیام راهنما برای کاربران جدید
-        messages.info(request, 'لطفاً فرم ثبت‌نام را با دقت پر کنید.')
+        messages.info(request, 'Please fill out the registration form carefully.')
 
 
 
@@ -160,7 +160,7 @@ def logout_view(request):
 def edit_account_view(request, *args, **kwargs):
     # بررسی احراز هویت کاربر
     if not request.user.is_authenticated:
-        messages.warning(request, 'لطفاً ابتدا وارد حساب کاربری خود شوید.')
+        messages.warning(request, 'Please sign in to your account first.')
         return redirect('aminicar:signin')
 
     # دریافت اطلاعات حساب کاربری
@@ -169,8 +169,8 @@ def edit_account_view(request, *args, **kwargs):
 
     # بررسی مالکیت پروفایل
     if account.pk != request.user.pk:
-        messages.error(request, 'شما اجازه ویرایش این پروفایل را ندارید.')
-        return HttpResponse("شما نمی‌توانید این پروفایل را ویرایش کنید.")
+        messages.error(request, 'You do not have permission to edit this profile.')
+        return HttpResponse("You are not allowed to edit this profile.")
 
     context = {}
 
@@ -178,10 +178,10 @@ def edit_account_view(request, *args, **kwargs):
         form = AccountUpdateForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, 'پروفایل شما با موفقیت به‌روزرسانی شد.')
+            messages.success(request, 'Your profile has been successfully updated.')
             return redirect('aminicar:profile', user_id=account.pk)
         else:
-            messages.error(request, 'لطفاً اطلاعات وارد‌شده را بررسی کنید.')
+            messages.error(request, 'Please check the information you entered.')
     else:
         form = AccountUpdateForm(
             initial={
