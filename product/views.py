@@ -4,8 +4,10 @@ from django.http import JsonResponse
 import json
 from django.contrib import messages 
 from django.shortcuts import get_object_or_404
+import logging
 
 
+logger = logging.getLogger(__name__)
 
 def view_product(request):
     context = {}
@@ -25,6 +27,7 @@ def product_detail(request, product_id):
     return render(request, 'aminicar/main/show_product.html', context)
 
 def add_to_cart(request):
+    
     current_user = request.user
     if request.method == "POST":
         if request.user.is_authenticated:
@@ -72,13 +75,44 @@ def checkout(request):
 
     context['cart_items'] = cart_items
     context['cart_total'] = cart_items.count()
-
+    cart_total=0
     total_price = 0
     for item in cart_items:
         total_price += item.product.price * item.quantity  # جمع کل قیمت محصولات با تعداد
-
+        cart_total +=item.quantity
     context['total_price'] = total_price
+    context['cart_total'] = cart_total
 
     messages.info(request, 'Please review your payment details.')
 
     return render(request, 'aminicar/main/checkout.html', context)
+
+
+
+
+
+def update_cart(request):
+    try:
+        data = json.loads(request.body)
+        prod_id = data.get('productId')
+        action = data.get('action')
+        logger.info(f"Product ID: {prod_id}, Action: {action}")
+
+        cart_item = Cart.objects.get(user=request.user, product_id=prod_id)
+        if action == 'add':
+            cart_item.quantity += 1
+        elif action == 'remove':
+            cart_item.quantity -= 1
+        logger.info(f"Quantity after update: {cart_item.quantity}")
+        cart_item.save()
+
+        if cart_item.quantity == 0:
+            cart_item.delete()
+            logger.info(f"Cart item deleted: {prod_id}")
+        return JsonResponse({'status': "Update Successfully"})
+    except Cart.DoesNotExist:
+        logger.error(f"Cart item not found for Product ID: {prod_id}")
+        return JsonResponse({'status': "Product not found in cart"}, status=404)
+    except Exception as e:
+        logger.error(f"Error updating cart: {e}")
+        return JsonResponse({'status': "Error occurred"}, status=500)
