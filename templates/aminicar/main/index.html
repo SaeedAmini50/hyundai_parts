@@ -82,7 +82,8 @@
 				<!-- Company details -->
 				<div class="col-md-12">
 						<p>
-						<h1 class="Company-name">Smart Car UK</h1>
+              <a href="#Company-name"></a>
+						<h1 id="Company-name" class="Company-name">Smart Car UK</h1>
 						<h4>
 							Welcome to Smart Car UK<br> Your Premier Source for Smart Car in the United Kingdom!<br> 
               Smart Car UK is a company established with the goal of providing the best Smart Car in the UK. 
@@ -136,6 +137,7 @@
     <div class="row">
       <div class="products-tabs">
         <!-- tab -->
+         <a href="#products"></a>
         <div id="tab1" class="tab-pane active">
           <div class="products-slick" data-nav="#slick-nav-1">
 
@@ -143,7 +145,7 @@
     {% for product in products %}
    
     <!-- product -->
-    <div class="product">
+    <div id="products" class="product">
       <div class="product-img">
         <img src="{{product.image.url}}" alt="">
         <div class="product-label">
@@ -204,10 +206,11 @@
 
 				<!-- Company details -->
 				<div class="col-md-12">
+          <a href="#choose"></a>
 					<div class="">
-						<h1 class="title">Why Choose Us</h1>
+						<h1  class="title">Why Choose Us</h1>
 						<p>
-						<h4>
+						<h4 id="choose">
 							With Smart Car UK, make a smart choice!<br> 
               Are you looking for an exceptional shopping experience for your Smart Car?<br> 
               With Smart Car UK, you'll benefit from all the services and products you're looking for. 
@@ -242,10 +245,13 @@
     <!-- container -->
     <div class="container">
     <!-- row -->
+     
     <div class="row">
+      
     <div class="col-md-4 col-xs-6">
+      <a href="#choose"></a>
     <div class="section-title">
-    <h4 class="title">All Products</h4>
+    <h4 class="title" id="all">All Products</h4>
     <div class="section-nav">
     <div id="slick-nav-3" class="products-slick-nav"></div>
     </div>
