@@ -89,8 +89,8 @@ ul, ol {
 .Company-details{
 
 	
-	text-align:right;
-	direction:rtl;
+	text-align:left;
+	direction: ltr;
 }
 
 h1{
@@ -1434,8 +1434,8 @@ textarea.input {
 	Product details
 \*----------------------------*/
 .product-details{
-	text-align:right;
-	direction:rtl;
+	text-align:left;
+	direction:ltr;
 }
 
 .product-details .product-name {
@@ -1480,8 +1480,8 @@ textarea.input {
   font-weight: 700;
   margin-left: 30px;
   color: #D10024;
-  text-align:right;
-	direction:rtl;
+  text-align:left;
+	direction:ltr;
 }
 
 .product-details .product-options {

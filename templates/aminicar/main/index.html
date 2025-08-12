@@ -26,8 +26,10 @@
   </div>
   <div class="shop-body">
   <h3>LR012345<br>LAND ROVER</h3>
-  <a href="storemachin.html" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
-  </div>
+  <a href="{%url 'product:product_detail' product_id=2%}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+
+
+</div>
   </div>
   </div>
   <!-- /shop -->
@@ -40,7 +42,7 @@
   </div>
   <div class="shop-body">
   <h3>LR012346<br>LAND ROVER</h3>
-  <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  <a href="{%url 'product:product_detail' product_id=1%}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
   </div>
   </div>
   </div>
@@ -54,7 +56,7 @@
   </div>
   <div class="shop-body">
   <h3>LR012347<br>LAND ROVER</h3>
-  <a href="storemachin.html" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  <a href="{%url 'product:product_detail' product_id=2%}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
   </div>
   </div>
   </div>
@@ -80,18 +82,18 @@
 				<!-- Company details -->
 				<div class="col-md-12">
 						<p>
-						<h1 class="Company-name">Land Rover Parts UK</h1>
+						<h1 class="Company-name">Smart Car UK</h1>
 						<h4>
-							Welcome to Land Rover Parts UK<br> Your Premier Source for Land Rover Parts in the United Kingdom!<br> 
-              Land Rover Parts UK is a company established with the goal of providing the best Land Rover parts in the UK. 
+							Welcome to Smart Car UK<br> Your Premier Source for Smart Car in the United Kingdom!<br> 
+              Smart Car UK is a company established with the goal of providing the best Smart Car in the UK. 
               We bring unparalleled quality and exceptional service to our valued customers.<br> 
-              With us, rest assured that every spare part you purchase from Land Rover Parts UK meets the highest quality 
+              With us, rest assured that every spare part you purchase from Smart Car UK meets the highest quality 
               and international standards. Through careful selection and sourcing from reputable suppliers, we ensure your 
               vehicle always performs at its best.<br> 
-              As a newly established company, Land Rover Parts UK is delighted to welcome you to our customer base. 
-              Visiting our website and experiencing our services will show you why Land Rover Parts UK is the right choice 
-              for your Land Rover parts needs in the UK.<br> 
-              Thank you for your trust. We at Land Rover Parts UK are committed to always providing you with the best 
+              As a newly established company, Smart Car UK is delighted to welcome you to our customer base. 
+              Visiting our website and experiencing our services will show you why Smart Car UK is the right choice 
+              for your Smart Car needs in the UK.<br> 
+              Thank you for your trust. We at Smart Car UK are committed to always providing you with the best 
               services and products.
 						</h4>
 						</p>
@@ -151,7 +153,7 @@
       <div class="product-body">
         <p class="product-category">{{product.mark}}</p>
         <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=product.id%}">Part Number <br>{{product.port}}<br>{{product.name}}  </a></h3>
-        <h4 class="product-price">£{{product.show_price}}<del class="product-old-price">{{product.discounted_price}}</del></h4>
+        <h4 class="product-price">£{{product.show_price}}  <del class="product-old-price">£{{product.discounted_price}}</del></h4>
         <div class="product-rating">
         </div>
         <div class="product-btns">
@@ -206,19 +208,19 @@
 						<h1 class="title">Why Choose Us</h1>
 						<p>
 						<h4>
-							With Land Rover Parts UK, make a smart choice!<br> 
-              Are you looking for an exceptional shopping experience for your Land Rover parts?<br> 
-              With Land Rover Parts UK, you'll benefit from all the services and products you're looking for. 
+							With Smart Car UK, make a smart choice!<br> 
+              Are you looking for an exceptional shopping experience for your Smart Car?<br> 
+              With Smart Car UK, you'll benefit from all the services and products you're looking for. 
               Here are several reasons to choose us:<br> 
               6 Months Warranty: We trust in the quality of our products, which is why we offer a 6-month warranty, 
               ensuring our customers enjoy their purchase and trust us with any issues.<br>
-              Free Shipping: With Land Rover Parts UK, free shipping across the UK is included with all your purchases. 
+              Free Shipping: With Smart Car UK, free shipping across the UK is included with all your purchases. 
               We value your convenience and satisfaction, which is why we provide fast and free shipping.<br> 
               Strong Support: Our team consists of experienced and dedicated customer support professionals who are 
               always available to assist you at every step of the purchasing process and address any questions or concerns.<br> 
               Product Returns: If for any reason you're not satisfied with your purchase, you can return the product to us 
               and receive your money back. Your satisfaction with your purchase is our top priority.<br> 
-              Experience the best shopping experience with Land Rover Parts UK. We're here to guide you through every 
+              Experience the best shopping experience with Smart Car UK. We're here to guide you through every 
               step of the purchasing process and ensure your vehicle performs at its best.<br>
 						</h4>
 						</p>
@@ -258,7 +260,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012345</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012345</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -270,7 +272,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012346</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012346</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -282,7 +284,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012347</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012347</a></h3>
     </div>
     </div>
     <!-- product widget -->
@@ -296,7 +298,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012348</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012348</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -308,7 +310,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012349</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012349</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -320,7 +322,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012350</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012350</a></h3>
     </div>
     </div>
     <!-- product widget -->
@@ -345,7 +347,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012351</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012351</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -357,7 +359,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012352</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012352</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -369,7 +371,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012353</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012353</a></h3>
     </div>
     </div>
     <!-- product widget -->
@@ -383,7 +385,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012354</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012354</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -395,7 +397,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012355</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012355</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -407,7 +409,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012356</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012356</a></h3>
     </div>
     </div>
     <!-- product widget -->
@@ -434,7 +436,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012357</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012357</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -446,7 +448,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012358</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012358</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -458,7 +460,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012359</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012359</a></h3>
     </div>
     </div>
     <!-- product widget -->
@@ -472,7 +474,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012360</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012360</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -484,7 +486,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storeTV.html">LR012361</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=1%}">LR012361</a></h3>
     </div>
     </div>
     <!-- /product widget -->
@@ -496,7 +498,7 @@
     </div>
     <div class="product-body">
     <p class="product-sumsong">LAND ROVER</p>
-    <h3 class="product-name"><a href="storemachin.html">LR012362</a></h3>
+    <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=2%}">LR012362</a></h3>
     </div>
     </div>
     <!-- product widget -->
