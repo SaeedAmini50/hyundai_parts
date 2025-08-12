@@ -139,7 +139,7 @@ def register_signup(request, *args, **kwargs):
             context['registration_form'] = form
             error_messages = form.errors.as_text()
             print(error_messages)
-            messages.error(request, 'Registration failed. Please check the form for errors. The password must be longer than 8 characters and should not resemble a Gmail address.')
+            messages.error(request, 'Registration failed. Password must be over 8 characters, include uppercase and lowercase letters, symbols, and not resemble a Gmail address.')
 
     else:
         form = RegistrationForm()
