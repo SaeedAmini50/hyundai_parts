@@ -104,7 +104,7 @@ def register_signin(request):
     else:
         form = AccountAuthenticationForm()
         # نمایش پیام راهنما برای تکمیل فرم
-        messages.info(request, 'Please enter your information.')
+        messages.info(request, 'Test Account For AdminPanel Email:admin@gmail.com And Password=An#U#6Tt1')
 
     context['login_form'] = form
     return render(request, 'aminicar/form/signin.html', context)
