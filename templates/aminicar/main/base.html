@@ -102,7 +102,7 @@
               <a href="{% url 'aminicar:profile' user_id=request.user.id %}"><i class="fa fa-user-o"></i>Your Profile</a>
             </li>
             {% else %}
-            <li class="fa fa-user-o"><a href="">No email entered</a></li>
+            <li ><a href="{% url 'aminicar:signup' %}"><i class="fa fa-user-o"></i>Sign Up</a></li>
             <li>
               <a href="{% url 'aminicar:signin' %}"><i class="fa fa-user-o"></i>Sign In</a>
             </li>
