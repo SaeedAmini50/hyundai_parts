@@ -89,8 +89,8 @@ ul, ol {
 .Company-details{
 
 	
-	text-align:left;
-	direction: ltr;
+	text-align:right;
+	direction: rtl;
 }
 
 h1{
