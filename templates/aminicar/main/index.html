@@ -12,7 +12,7 @@
   <div class="section-title">
   <div class="section-nav">
   <ul class="section-tab-nav tab-nav">
-  <h1><li class="active"><a name="NEW" data-toggle="tab" href="#tab2">New Products</a></li></h1>
+  <h1><li class="active"><a name="NEW" data-toggle="tab" href="#tab2">محصولات جدید</a></li></h1>
   </ul>
   </div>
   </div>
@@ -26,7 +26,7 @@
   </div>
   <div class="shop-body">
   <h3>LR012345<br>LAND ROVER</h3>
-  <a href="{%url 'product:product_detail' product_id=2%}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  <a href="{%url 'product:product_detail' product_id=2%}" class="cta-btn">مشاهده محصول <i class="fa fa-arrow-circle-right"></i></a>
 
 
 </div>
@@ -42,7 +42,7 @@
   </div>
   <div class="shop-body">
   <h3>LR012346<br>LAND ROVER</h3>
-  <a href="{%url 'product:product_detail' product_id=1%}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  <a href="{%url 'product:product_detail' product_id=1%}" class="cta-btn">مشاهده محصول <i class="fa fa-arrow-circle-right"></i></a>
   </div>
   </div>
   </div>
@@ -56,7 +56,7 @@
   </div>
   <div class="shop-body">
   <h3>LR012347<br>LAND ROVER</h3>
-  <a href="{%url 'product:product_detail' product_id=2%}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+  <a href="{%url 'product:product_detail' product_id=2%}" class="cta-btn">مشاهده محصول <i class="fa fa-arrow-circle-right"></i></a>
   </div>
   </div>
   </div>
@@ -83,19 +83,13 @@
 				<div class="col-md-12">
 						<p>
               <a href="#Company-name"></a>
-						<h1 id="Company-name" class="Company-name">Smart Car UK</h1>
+            <h1 id="Company-name" class="Company-name">Family Mart | فامیلی مارت</h1>
 						<h4>
-							Welcome to Smart Car UK<br> Your Premier Source for Smart Car in the United Kingdom!<br> 
-              Smart Car UK is a company established with the goal of providing the best Smart Car in the UK. 
-              We bring unparalleled quality and exceptional service to our valued customers.<br> 
-              With us, rest assured that every spare part you purchase from Smart Car UK meets the highest quality 
-              and international standards. Through careful selection and sourcing from reputable suppliers, we ensure your 
-              vehicle always performs at its best.<br> 
-              As a newly established company, Smart Car UK is delighted to welcome you to our customer base. 
-              Visiting our website and experiencing our services will show you why Smart Car UK is the right choice 
-              for your Smart Car needs in the UK.<br> 
-              Thank you for your trust. We at Smart Car UK are committed to always providing you with the best 
-              services and products.
+              به فامیلی مارت خوش آمدید — زندگی هوشمند از اینجا شروع می‌شود.<br>
+              فامیلی مارت با بیش از ۲۰ سال تجربه در واردات و عرضه محصولات باکیفیت، خانه‌ها را به سبک زندگی مدرن و هوشمند نزدیک‌تر می‌کند.<br>
+              حوزه کاری ما لوازم خانگی برقی شامل یخچال، لباسشویی و تلویزیون است؛ با کیفیت عالی و قیمت مناسب.<br>
+              واردات مستقیم از سنگاپور و دوبی انجام می‌شود و سابقه واردات از ژاپن، آمریکا، ایران، پاکستان، دوبی و چین را داریم.<br>
+              فعالیت‌های قبلی ما در شهرهای مختلف افغانستان (هرات، مزار شریف، قندهار، هلمند، نیمروز) بوده و اکنون تمرکز بر کابل است تا خدمات به‌روزتر ارائه دهیم.
 						</h4>
 						</p>
 				</div>
@@ -124,7 +118,7 @@
   
   <div class="section-nav">
   <ul class="section-tab-nav tab-nav">
-  <h1><li class="active">Our Products</li></h1>
+  <h1><li class="active">محصولات ما</li></h1>
   
   </ul>
   </div>
@@ -154,20 +148,20 @@
       </div>
       <div class="product-body">
         <p class="product-category">{{product.mark}}</p>
-        <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=product.id%}">Part Number <br>{{product.port}}<br>{{product.name}}  </a></h3>
-        <h4 class="product-price">£{{product.show_price}}  <del class="product-old-price">£{{product.discounted_price}}</del></h4>
+        <h3 class="product-name"><a href="{%url 'product:product_detail' product_id=product.id%}">شماره قطعه<br>{{product.port}}<br>{{product.name}}</a></h3>
+        <h4 class="product-price">{{product.show_price}} AFN <del class="product-old-price">{{product.discounted_price}} AFN</del></h4>
         <div class="product-rating">
         </div>
         <div class="product-btns">
-          <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-          <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-          <button class="quick-view"><a href="{%url 'product:product_detail' product_id=product.id%}"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
+          <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">افزودن به علاقه‌مندی</span></button>
+          <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">مقایسه</span></button>
+          <button class="quick-view"><a href="{%url 'product:product_detail' product_id=product.id%}"><i class="fa fa-eye"></i></a><span class="tooltipp">نمایش سریع</span></button>
         </div>
       </div>
       <div class="add-to-cart">
         <input type="hidden" class="prodt_id" value="{{ product.id }}">
         <button class="add-to-cart-btn" onclick="location.href='{% url 'product:product_detail' product.id %}'">
-          <i class="fa fa-eye"></i> show product
+          <i class="fa fa-eye"></i> نمایش محصول
         </button>
       </div>
     </div>
@@ -175,7 +169,7 @@
 
     {% endfor %}
     {% else %}
-    <h1>No products available</h1>
+    <h1>محصولی موجود نیست</h1>
     {% endif %}
 
   </div>
@@ -207,25 +201,16 @@
 				<!-- Company details -->
 				<div class="col-md-12">
           <a href="#choose"></a>
-					<div class="">
-						<h1  class="title">Why Choose Us</h1>
+          <div class="">
+            <h1  class="title">چرا فامیلی مارت؟</h1>
 						<p>
-						<h4 id="choose">
-							With Smart Car UK, make a smart choice!<br> 
-              Are you looking for an exceptional shopping experience for your Smart Car?<br> 
-              With Smart Car UK, you'll benefit from all the services and products you're looking for. 
-              Here are several reasons to choose us:<br> 
-              6 Months Warranty: We trust in the quality of our products, which is why we offer a 6-month warranty, 
-              ensuring our customers enjoy their purchase and trust us with any issues.<br>
-              Free Shipping: With Smart Car UK, free shipping across the UK is included with all your purchases. 
-              We value your convenience and satisfaction, which is why we provide fast and free shipping.<br> 
-              Strong Support: Our team consists of experienced and dedicated customer support professionals who are 
-              always available to assist you at every step of the purchasing process and address any questions or concerns.<br> 
-              Product Returns: If for any reason you're not satisfied with your purchase, you can return the product to us 
-              and receive your money back. Your satisfaction with your purchase is our top priority.<br> 
-              Experience the best shopping experience with Smart Car UK. We're here to guide you through every 
-              step of the purchasing process and ensure your vehicle performs at its best.<br>
-						</h4>
+            <h4 id="choose">
+              با فامیلی مارت، انتخابی هوشمندانه داشته باشید!<br>
+              - تست محصولات پیش از فروش برای اطمینان از سالم بودن<br>
+              - ضمانت سه‌ماهه با تعمیرات رایگان در صورت بروز مشکل<br>
+              - ارائه‌ی اکانت ویژه هوش مصنوعی برای پاسخ‌های صوتی و تصویری پس از خرید<br>
+              - امکان سفارش محصولات ویژه مطابق نیاز و سلیقه شما
+            </h4>
 						</p>
 					</div>
 				</div>
@@ -251,7 +236,7 @@
     <div class="col-md-4 col-xs-6">
       <a href="#choose"></a>
     <div class="section-title">
-    <h4 class="title" id="all">All Products</h4>
+    <h4 class="title" id="all">همه محصولات</h4>
     <div class="section-nav">
     <div id="slick-nav-3" class="products-slick-nav"></div>
     </div>
@@ -338,7 +323,7 @@
     
     <div class="col-md-4 col-xs-6">
     <div class="section-title">
-    <h4 class="title">All Products</h4>
+    <h4 class="title">همه محصولات</h4>
     <div class="section-nav">
     <div id="slick-nav-4" class="products-slick-nav"></div>
     </div>
@@ -427,7 +412,7 @@
     
     <div class="col-md-4 col-xs-6">
     <div class="section-title">
-    <h4 class="title">All Products</h4>
+    <h4 class="title">همه محصولات</h4>
     <div class="section-nav">
     <div id="slick-nav-5" class="products-slick-nav"></div>
     </div>

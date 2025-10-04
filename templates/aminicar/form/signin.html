@@ -15,10 +15,10 @@
               >
                 <a href="indexAdmin.html" class="">
                   <h3 class="text-primary">
-                    <i class="fa fa-user-edit me-2"></i>Smart Store
+                    <i class="fa fa-user-edit me-2"></i>فامیلی مارت
                   </h3>
                 </a>
-                <h3>Sign In</h3>
+                <h3>ورود</h3>
               </div>
               <form method="post">
                 {% csrf_token %}
@@ -30,7 +30,7 @@
                     placeholder="name@example.com"
                     required="required"
                   />
-                  <label for="floatingInput">address email  </label>
+                  <label for="floatingInput">آدرس ایمیل</label>
                 </div>
                 <div class="form-floating mb-4">
                   <input
@@ -40,7 +40,7 @@
                     placeholder="Password"
                     required="required"
                   />
-                  <label for="floatingPassword">password</label>
+                  <label for="floatingPassword">گذرواژه</label>
                 </div>
                 <div
                   class="d-flex align-items-center justify-content-between mb-4"
@@ -52,18 +52,18 @@
                       id="exampleCheck1"
                     />
                     <label class="form-check-label" for="exampleCheck1"
-                      >Remember me!</label
+                      >مرا به خاطر بسپار</label
                     >
                   </div>
                   <br />
-                  <a href="{%url 'aminicar:signup'%}">Forgot your password?</a>
+                  <a href="{%url 'aminicar:signup'%}">گذرواژه خود را فراموش کرده‌اید؟</a>
                 </div>
                 <button type="submit" class="btn btn-primary py-3 w-100 mb-4">
-                  Sign In
+                  ورود
                 </button>
                 <p class="text-center mb-0">
-              I already have an account
-                  <a href="{%url 'aminicar:signup'%}">Sign Up</a>
+              حساب کاربری ندارید؟
+                  <a href="{%url 'aminicar:signup'%}">ثبت‌ نام</a>
                 </p>
               </form>
             </div>

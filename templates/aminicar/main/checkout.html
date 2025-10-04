@@ -8,10 +8,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Checkout</h3>
+						<h3 class="breadcrumb-header">تسویه حساب</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
-							<li class="active">Checkout</li>
+							<li><a href="#">خانه</a></li>
+							<li class="active">تسویه حساب</li>
 						</ul>
 					</div>
 				</div>
@@ -32,29 +32,29 @@
 						<!-- Billing Details -->
 						<div class="billing-details">
 							<div class="section-title">
-								<h3 class="title">Delivery Address</h3>
+								<h3 class="title">آدرس تحویل</h3>
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="city">
+								<input class="input" type="text" name="city" placeholder="شهر">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Delivery Address"">
+								<input class="input" type="text" name="address" placeholder="آدرس تحویل"">
 							</div>
-		
+
 							<div class="form-group">
-  <input class="input" type="text" name="post-code" placeholder="Postal Code">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder=" Phone Number">
+  <input class="input" type="text" name="post-code" placeholder="کد پستی">
 							</div>
 							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder=" Email Address">
+								<input class="input" type="tel" name="tel" placeholder=" شماره تلفن">
+							</div>
+							<div class="form-group">
+								<input class="input" type="email" name="email" placeholder=" آدرس ایمیل">
 							</div>
 							<div class="form-group">
 								<div class="input-checkbox">
 									<div class="caption">
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-										<input class="input" type="password" name="password" placeholder="Enter Your Password">
+										<input class="input" type="password" name="password" placeholder="گذرواژه خود را وارد کنید">
 									</div>
 								</div>
 							</div>
@@ -63,7 +63,7 @@
 
 						<!-- Order notes -->
 						<div class="order-notes">
-							<textarea class="input" placeholder=" Additional Information "></textarea>
+							<textarea class="input" placeholder=" اطلاعات اضافی "></textarea>
 						</div>
 						<!-- /Order notes -->
 					</div>
@@ -71,15 +71,15 @@
 					<!-- Order Details -->
 					<div class="col-md-5 order-details">
 						<div class="section-title text-center">
-						<h3 class="title">Your total requests amount to {{ cart_total }}</h3>
+						<h3 class="title">مبلغ کل درخواست‌های شما {{ cart_total }}</h3>
 						</div>
 						<div class="order-summary">
 							<div class="order-col">
 								
 								
-								<div><strong>Part Number</strong></div>
-<div><strong>Name & Brand</strong></div>
-<div><strong>Price</strong></div>
+								<div><strong>شماره قطعه</strong></div>
+<div><strong>نام و برند</strong></div>
+<div><strong>قیمت</strong></div>
 
 							</div>
 					{% csrf_token %}
@@ -96,12 +96,12 @@
 							{%endfor%}
 							
 							<div class="order-col">
-						<div>Product Delivery</div>
-<div><strong>Free of Charge</strong></div>
+						<div>تحویل محصول</div>
+<div><strong>رایگان</strong></div>
 
 							</div>
 							<div class="order-col">
-								<div><strong>Price List</strong></div>
+								<div><strong>فهرست قیمت</strong></div>
 
 								<div><strong class="order-total">{{total_price}}</strong></div>
 							</div>
@@ -111,10 +111,10 @@
 								<input type="radio" name="payment" id="payment-1">
 								<label for="payment-1">
 									<span></span>
-									Payment Method: paypal
+									روش پرداخت: پی‌پال
 								</label>
 								<div class="caption">
-									<p>Your product will arrive in two days.</p>
+									<p>محصول شما در دو روز آینده تحویل خواهد شد.</p>
 								</div>
 							</div>
 			
@@ -122,10 +122,10 @@
 								<input type="radio" name="payment" id="payment-3">
 								<label for="payment-3">
 									<span></span>
-								Payment Method: visa cart
+								روش پرداخت: کارت ویزا
 								</label>
 								<div class="caption">
-									<p>Your item will arrive in 4 hours.</p>
+									<p>محصول شما در ۴ ساعت آینده تحویل خواهد شد.</p>
 
 								</div>
 							</div>
@@ -134,11 +134,11 @@
 							<input type="checkbox" id="terms">
 							<label for="terms">
 								<span></span>
-								<p>I agree to the <a href="#">terms and conditions</a>.</p>
+								<p>با <a href="#">شرایط و قوانین</a> موافقم.</p>
 
 							</label>
 						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
+						<a href="#" class="primary-btn order-submit">ثبت سفارش</a>
 					</div>
 					<!-- /Order Details -->
 				</div>

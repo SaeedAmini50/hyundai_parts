@@ -16,9 +16,9 @@
 						
 					</div>
 					<div class="about">
-						<h5 class="mb-2 text-primary">Notice</h5>
+						<h5 class="mb-2 text-primary">توجه</h5>
 						<p >
-You may upload your photo above.
+می‌توانید عکس خود را در بالا آپلود کنید.
 						</p>
 					</div>
 				</div>
@@ -34,27 +34,27 @@ You may upload your photo above.
 						{%csrf_token%}
 				<div class="row gutters">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<h3 class="mb-3 text-primary" >  Your profile information  </h3>
+						<h3 class="mb-3 text-primary" >  اطلاعات پروفایل شما  </h3>
 					</div>		
 					
 									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 						<div class="form-group">
-							<label for="name">name</label>
-							<input type="text" value="{{user.username}}" name="username"  class="form-control" id="fullName" placeholder=" your name">
+							<label for="name">نام</label>
+							<input type="text" value="{{user.username}}" name="username"  class="form-control" id="fullName" placeholder=" نام شما">
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 						<div class="form-group">
-							<label for="email">email</label>
-							<input type="email" value="{{user.email}}" name="email" class="form-control" id="email" placeholder="your name">
+							<label for="email">ایمیل</label>
+							<input type="email" value="{{user.email}}" name="email" class="form-control" id="email" placeholder="ایمیل شما">
 						</div>
 					</div>
 						
 		
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 						<div class="form-group">
-							<label >  Click here to change your profile picture. </label>
-							<input   type="file" value="change profile" name="profile_image" class="form-control" >
+							<label >  برای تغییر عکس پروفایل اینجا کلیک کنید. </label>
+							<input   type="file" value="تغییر پروفایل" name="profile_image" class="form-control" >
 						</div>
 					</div>
 		
@@ -64,8 +64,8 @@ You may upload your photo above.
 				<div class="row gutters">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 						<div class="text-right">
-							<button   id="submit" name="submit" class="btn btn-secondary"><a href="{%url 'password_change'%}">change password</a></button>
-							<button type="submit" id="submit" name="submit" class="btn btn-primary">Update</button>
+							<button   id="submit" name="submit" class="btn btn-secondary"><a href="{%url 'password_change'%}">تغییر گذرواژه</a></button>
+							<button type="submit" id="submit" name="submit" class="btn btn-primary">به‌روزرسانی</button>
 						</div>
 					</div>
 				</div>
